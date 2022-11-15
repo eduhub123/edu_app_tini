@@ -1,0 +1,8 @@
+<view class="item-product d-flex {{index === 0 ? 'mr-xxs' : 'ml-xxs'}}" style="background-color: {{color}}" onTap="_onChangeAppId">
+  <view class="m-xxs image-wrap">
+    <image class="image-product" src="{{image}}" />
+  </view>
+  <view class="ml-xxs">
+    <text class="product-name" style="{{styleName ? styleName : ''}}">{{name}}</text>
+  </view>
+</view>

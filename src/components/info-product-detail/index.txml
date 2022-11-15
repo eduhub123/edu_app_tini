@@ -1,0 +1,28 @@
+<view class="py-m">
+  <text class="title">Chi tiết sản phẩm</text>
+  <view tiki:if="{{!isShowMore}}" class="info-product-content-hidden">
+    <view tiki:for="{{contents}}" tiki:for-index="index" tiki:for-item="content">
+      <view tiki:if="{{index <= indexMin}}" class="info-product-detail-item">
+        <check-circle />
+        <text class="ml-s note-medium text-justify">{{content}}</text>
+      </view>
+    </view>
+    <view class="view-opacity" />
+    <view class="button-show-more" onTap="onToggleShowMore">
+      <text class="text-show-more">Xem thêm</text>
+      <icon class="ml-xxs" type="arrow_down" color="#ff4b4b" />
+    </view>
+  </view>
+  <view tiki:else>
+    <view tiki:for="{{contents}}" tiki:for-index="index" tiki:for-item="content">
+      <view class="info-product-detail-item">
+        <check-circle />
+        <text class="ml-s note-medium text-justify">{{content}}</text>
+      </view>
+    </view>
+    <view class="button-collapse" onTap="onToggleShowMore">
+      <text class="text-show-more">Thu gọn</text>
+      <icon class="ml-xxs" type="arrow_up" color="#ff4b4b" />
+    </view>
+  </view>
+</view>

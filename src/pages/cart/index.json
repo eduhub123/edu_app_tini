@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "Giỏ hàng",
+  "hideAddToDeviceButton": "YES",
+  "usingComponents": {
+    "footer-cart": "components/footer-cart/index",
+    "cart-product-item": "components/cart-product-item/index",
+    "modal": "components/modal/index"
+  }
+}

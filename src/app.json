@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/product-detail/index",
+    "pages/cart/index",
+    "pages/order-confirm/index",
+    "pages/thankyou-page/index",
+    "pages/order-detail/index",
+    "pages/review/index",
+    "pages/contact-monkey/index"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF"
+  }
+}

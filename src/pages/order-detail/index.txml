@@ -1,0 +1,17 @@
+<view class="bg-gray">
+  <view class="bg-white p-m">
+    <view class="hr pb-s">
+      <text class="d-block note-bold">Mã đơn hàng: ABC123</text>
+      <text class="d-block note">Ngày đặt hàng: ABC123</text>
+      <text class="d-block note italic">Thành công</text>
+    </view>
+    <view class="py-m">
+      <list-product title="Danh sách sản phẩm" />
+    </view>
+  </view>
+  <view class="p-m d-flex my-s bg-white">
+    <text class="note-bold">Phương thức thanh toán</text>
+    <text class="flex-1 note-bold text-right ml-s">Momo</text>
+  </view>
+  <payment-detail />
+</view>

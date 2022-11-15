@@ -1,0 +1,25 @@
+<view class="loading-wrap">
+  <view class="load-wrapper">
+    <view class="load-circle">
+      L
+    </view>
+    <view class="load-circle">
+      O
+    </view>
+    <view class="load-circle">
+      A
+    </view>
+    <view class="load-circle">
+      D
+    </view>
+    <view class="load-circle">
+      I
+    </view>
+    <view class="load-circle">
+      N
+    </view>
+    <view class="load-circle">
+      G
+    </view>
+  </view>
+</view>

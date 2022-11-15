@@ -1,0 +1,8 @@
+<view>
+  <text class="title d-block my-m">Danh sách sản phẩm</text>
+  <view tiki:for="{{listAppId}}" tiki:key="index" tiki:for-item="rowProduct" class="d-flex mb-s">
+    <view tiki:for="{{rowProduct}}" tiki:for-item="product" class="product">
+      <product index="{{index}}" name="{{product.name}}" appId="{{product.appId}}" color="{{product.appId === chooseAppId ? product.color : '#F5F5FA'}}" image="{{product.image}}" styleName="{{product.appId === chooseAppId ? 'color: #fff' : ''}}" onChangeAppId="_onChangeAppId"/>
+    </view>
+  </view>
+</view>

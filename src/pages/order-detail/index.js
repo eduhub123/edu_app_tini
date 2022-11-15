@@ -1,0 +1,5 @@
+Page({
+  props: {
+    className: "",
+  },
+});

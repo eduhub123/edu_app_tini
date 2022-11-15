@@ -1,0 +1,1 @@
+<text tiki:if="{{promotion > 0}}" class="promotion-home">-{{promotion}}%</text>

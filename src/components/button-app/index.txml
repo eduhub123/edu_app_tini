@@ -1,0 +1,6 @@
+<view tiki:if="{{type === 'solid'}}" class="button-app-wrap button-solid {{className}}" onTap="_onTap">
+  <text number-of-lines="1">{{title}}</text>
+</view>
+<view tiki:elif="{{type === 'outline'}}" class="button-app-wrap button-outline {{className}}" onTap="_onTap">
+  <text number-of-lines="1">{{title}}</text>
+</view>

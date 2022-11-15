@@ -1,0 +1,13 @@
+<view class="d-flex discount-code-item align-items-center">
+  <view class="mr-s">
+    <text class="code-item">TIKI01234677</text>
+  </view>
+  <view class="flex-1">
+    <text class="d-block note-item">Giam 50k</text>
+    <text class="d-block note-item">Don hang tu 369k</text>
+    <text class="d-block note-item">Ap dung tat ca san pham</text>
+  </view>
+  <view class="ml-xs">
+    <radio checked="true" color="#EE202E" />
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view tiki:if="{{isLoading}}">
+  <loading />
+</view>
+
+<view tiki:elif="{{isError}}">
+  <error message="{{messageError}}" />
+</view>
+
+<view tiki:else>
+  <banners banners="{{banners}}" isLoading="{{isLoading}}" />
+  <view class="px-m mb-m">
+    <list-product listAppId="{{products}}" chooseAppId="{{chooseAppId}}" onChangeAppId="onChangeAppId" />
+    <view class="mt-m">
+      <view tiki:for="{{packages[chooseAppId]}}" tiki:key="index" tiki:for-item="packageItem">
+        <package-item-home id="{{packageItem.product_id}}" image="{{packageItem.image}}" color="{{packageItem.color}}" name="{{packageItem.product_name}}" price="{{packageItem.price}}" promotion="{{packageItem.sale_off}}" onTapPackage="goToProductDetail" />
+      </view>
+    </view>
+    <monkey-story content="{{monkeyStoryContent}}" />
+    <cooperate-with-monkey />
+  </view>
+  <footer-home />
+</view>

@@ -1,0 +1,9 @@
+.icon-check-wrap {
+  border: 2px solid #00ab56;
+  width: 20px;
+  height: 20px;
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,24 @@
+<import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+
+<view class="hr">
+  <view class="d-flex py-s">
+    <view>
+      <checkbox color="#FF4B4B" checked="{{checked}}" />
+    </view>
+    <view style="background-color: {{color}}" class="image-cart-wrap">
+      <image src="{{image}}" class="image-cart" />
+    </view>
+    <view class="flex-1">
+      <text class="d-block note-medium">{{name}}</text>
+      <text class="d-block note-bold">{{moneyFormatter(price)}}</text>
+      <view class="mt-s">
+        <quantity-input value="{{quantity}}" onChange="_onChangeQuantity" />
+      </view>
+    </view>
+    <view>
+      <view onTap="_onTapRemoveProduct">
+        <icon type="close" />
+      </view>
+    </view>
+  </view>
+</view>

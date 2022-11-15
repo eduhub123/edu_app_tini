@@ -1,0 +1,14 @@
+.image-product-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.image-product {
+  width: 80%;
+  height: 80%;
+}

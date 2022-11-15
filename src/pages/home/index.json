@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "banners": "components/banners/index",
+    "list-product": "components/list-product/index",
+    "package-item-home": "components/package-item-home/index",
+    "monkey-story": "components/monkey-story/index",
+    "cooperate-with-monkey": "components/cooperate-with-monkey/index",
+    "footer-home": "components/footer-home/index",
+    "loading": "components/loading/index",
+    "error": "components/error/index"
+  }
+}

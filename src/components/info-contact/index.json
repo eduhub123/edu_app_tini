@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "popup-edit-info-contact": "components/popup-edit-info-contact/index"
+  }
+}

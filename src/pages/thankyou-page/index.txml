@@ -1,0 +1,39 @@
+<import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+
+<view class="p-m">
+  <view class="body-thankyou">
+    <view class="d-flex justify-center">
+      <image src="/public/assets/icons/payment_success.svg" />
+      <!-- <image src="/public/assets/icons/payment_fail.svg" /> -->
+    </view>
+    <view class="text-center title mb-s">
+      <text class="color-success">Thanh toán thành công!</text>
+    </view>
+    <view class="text-center mb-m">
+      <view>
+        <text class="note d-block mb-m">Mã voucher sẽ được gửi về SĐT/Email đăng ký của bạn trong vòng 24h. Sau 24h nếu bạn chưa nhận được tài khoản, vui lòng liên hệ đến Hotline: 1900636052 để được hỗ trợ.</text>
+        <text class="info">Tham gia cộng đồng Đồng Hành Cùng Con Học Monkey để cập nhật tài liệu học tập mới nhất.</text>
+      </view>
+    </view>
+    <view>
+      <view class="d-flex py-s hr">
+        <text>Mã đơn hàng</text>
+        <text class="flex-1 ml-m text-right note-bold">ABC123</text>
+      </view>
+      <view class="d-flex py-s hr">
+        <text>Phương thức thanh toán</text>
+        <text class="flex-1 ml-m text-right note-bold">ABC123</text>
+      </view>
+      <view class="d-flex py-s">
+        <text>Tổng thanh toán</text>
+        <text class="flex-1 ml-m text-right note-bold">{{moneyFormatter(699000)}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="hr-top p-m fixed-bottom bg-white ">
+    <view class="d-flex">
+      <button-app type="outline" className="flex-1 mr-xs" title="Về trang chủ" />
+      <button-app className="flex-1 mr-ls" title="Xem đơn hàng" onTap="goToOrderDetail" />
+    </view>
+  </view>
+</view>

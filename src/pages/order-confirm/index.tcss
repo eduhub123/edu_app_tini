@@ -1,0 +1,14 @@
+.order-confirm-wrap {
+  background-color: #f5f5fa;
+}
+
+.footer-order-confirm {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.body-order-confirm {
+  margin-bottom: 160px;
+}

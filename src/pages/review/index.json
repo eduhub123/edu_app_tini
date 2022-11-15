@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "Đánh giá của khách hàng",
+  "usingComponents": {
+    "review-item": "components/review-item/index"
+  }
+}

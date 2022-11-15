@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "promotion-percent": "components/promotion-percent/index"
+  }
+}

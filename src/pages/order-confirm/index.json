@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "Xác nhận đơn hàng",
+  "usingComponents": {
+    "order-detail": "components/order-detail/index",
+    "payment-methods": "components/payment-methods/index",
+    "info-contact": "components/info-contact/index",
+    "payment-detail": "components/payment-detail/index",
+    "footer-cart": "components/footer-cart/index"
+  }
+}

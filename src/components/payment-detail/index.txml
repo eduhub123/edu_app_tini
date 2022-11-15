@@ -1,0 +1,21 @@
+<import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+
+<view class="mt-xs bg-white p-m">
+  <text class="title">Chi tiết thanh toán</text>
+  <view class="d-flex hr py-xs">
+    <text class="note">Tổng tiền hàng</text>
+    <text class="flex-1 note text-right ml-xs">{{moneyFormatter(22220)}}</text>
+  </view>
+  <view class="d-flex hr py-xs">
+    <text class="note">Phí</text>
+    <text class="flex-1 note text-right ml-xs">{{moneyFormatter(22220)}}</text>
+  </view>
+  <view class="d-flex hr py-xs">
+    <text class="note">Giảm giá</text>
+    <text class="flex-1 note text-right ml-xs color-success">{{moneyFormatter(22220)}}</text>
+  </view>
+  <view class="d-flex py-xs">
+    <text class="note">Tổng thanh toán</text>
+    <text class="flex-1 note-bold text-right ml-xs">{{moneyFormatter(22220)}}</text>
+  </view>
+</view>

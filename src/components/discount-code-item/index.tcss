@@ -1,0 +1,17 @@
+.note-item {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.code-item {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.discount-code-item {
+  border: 1px solid #e6e8ec;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 2px 6px 10px 0px rgba(204, 204, 204, 1);
+  margin-bottom: 16px;
+}

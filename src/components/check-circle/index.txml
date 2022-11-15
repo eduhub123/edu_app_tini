@@ -1,0 +1,3 @@
+<view class="icon-check-wrap">
+  <icon type="checked_mark" color="#00AB56" size="20" />
+</view>

@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "promotion-item": "components/promotion-item/index",
+    "package-info-item": "components/package-info-item/index",
+    "info-product-detail": "components/info-product-detail/index",
+    "customer-reviews": "components/customer-reviews/index",
+    "similar-product": "components/similar-product/index",
+    "promotion-percent": "components/promotion-percent/index",
+    "star-rating": "components/star-rating/index",
+    "button-app": "components/button-app/index",
+    "loading": "components/loading/index",
+    "error": "components/error/index",
+    "banners": "components/banners/index",
+    "toast": "components/toast/index"
+  }
+}

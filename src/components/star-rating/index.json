@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "icon-app": "components/icon-app/index"
+  },
+  "componentLifeCycleV2": "YES"
+}

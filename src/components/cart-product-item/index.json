@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "quantity-input": "components/quantity-input/index"
+  }
+}

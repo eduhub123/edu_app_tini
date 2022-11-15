@@ -1,0 +1,4 @@
+.button-change {
+  font-style: italic;
+  color: #3636ee;
+}

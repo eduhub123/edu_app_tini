@@ -1,0 +1,22 @@
+<view class="d-flex">
+  <text>
+    <icon-app tiki:if="{{rating >= 1}}" type="star" />
+    <icon-app tiki:else="" type="star" color="gray" />
+  </text>
+  <text>
+    <icon-app tiki:if="{{rating >= 2}}" type="star" />
+    <icon-app tiki:else="" type="star" color="gray" />
+  </text>
+  <text>
+    <icon-app tiki:if="{{rating >= 3}}" type="star" />
+    <icon-app tiki:else="" type="star" color="gray" />
+  </text>
+  <text>
+    <icon-app tiki:if="{{rating >= 4}}" type="star" />
+    <icon-app tiki:else="" type="star" color="gray" />
+  </text>
+  <text>
+    <icon-app tiki:if="{{rating >= 5}}" type="star" />
+    <icon-app tiki:else="" type="star" color="gray" />
+  </text>
+</view>

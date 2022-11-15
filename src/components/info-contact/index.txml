@@ -1,0 +1,24 @@
+<view class="mt-xs bg-white p-m">
+  <view class="d-flex justify-space mb-xs">
+    <text class="title">Thông tin liên hệ</text>
+    <view class="d-flex align-items-center button-change" onTap="onShowPopupEdit">
+      <icon type="plus" color="#3636ee" />
+      <text>
+        Thay đổi
+      </text>
+    </view>
+  </view>
+  <view class="d-flex hr py-xs">
+    <text class="note">Họ tên</text>
+    <text class="flex-1 note-bold text-right ml-xs">User name</text>
+  </view>
+  <view class="d-flex hr py-xs">
+    <text class="note">Số điện thoại</text>
+    <text class="flex-1 note-bold text-right ml-xs">User name</text>
+  </view>
+  <view class="d-flex py-xs">
+    <text class="note">Email</text>
+    <text class="flex-1 note-bold text-right ml-xs">User name</text>
+  </view>
+  <popup-edit-info-contact show="{{showPopupEdit}}" onClose="onHidePopupEdit" />
+</view>

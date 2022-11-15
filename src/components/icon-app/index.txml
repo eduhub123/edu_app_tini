@@ -1,0 +1,7 @@
+<view class="d-flex align-items-center">
+  <text tiki:if="{{type === 'star'}}">
+    <image tiki:if="{{color === 'gray'}}" src="/public/assets/icons/star_gray.svg" style="width: {{size}}px; height: {{size}}px;" />
+    <image tiki:else src="/public/assets/icons/star.svg" style="width: {{size}}px; height: {{size}}px;" />
+  </text>
+  <image tiki:elif="{{type === 'discount'}}" src="/public/assets/icons/icon_discount.svg" style="width: {{size}}px; height: {{size}}px;" />
+</view>

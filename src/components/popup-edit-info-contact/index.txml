@@ -1,0 +1,16 @@
+<bottom-sheet show="{{show}}" title="Thay đổi thông tin liên hệ" buttonTitle="Xác nhận" buttonCls="btnConfirm" onClose="_onClose">
+  <view class="p-m">
+    <view class="input-contact-wrap hr">
+      <text>Họ tên</text>
+      <input class="input-contact" type="text" />
+    </view>
+    <view class="input-contact-wrap hr">
+      <text>Số điện thoại</text>
+      <input class="input-contact" type="tel" />
+    </view>
+    <view class="input-contact-wrap">
+      <text>Email</text>
+      <input class="input-contact" type="email" />
+    </view>
+  </view>
+</bottom-sheet />

@@ -1,0 +1,4 @@
+<view class="d-flex justify-space align-items-center bg-umber p-xs cooperation-wrap">
+  <text class="title color-white">Hợp tác với Monkey</text>
+  <button-app title="Liên hệ ngay" onTap="onTapContactMonkey" />
+</view>

@@ -1,0 +1,36 @@
+<import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+
+<view tiki:if="{{isLoading}}">
+  <loading />
+</view>
+
+<view tiki:elif="{{isError}}">
+  <error message="{{messageError}}" />
+</view>
+
+<view tiki:else>
+  <view class="info header-page">
+    <text number-of-lines="1"><text onTap="onTapHome">Trang chủ</text> / {{product.nameProduct}}</text>
+  </view>
+  <banners banners="{{banner}}" isLoading="{{isLoading}}" />
+  <view class="p-m color-black" style="padding-bottom: 90px;">
+    <view>
+      <text class="info color-black">{{product.nameProduct}}</text>
+    </view>
+    <star-rating rating="{{product.rating}}" />
+    <view class="d-flex align-items-center">
+      <text class="title color-black mr-xs">{{moneyFormatter(product.price)}}</text>
+      <text class="info color-gray text-through">{{moneyFormatter(product.priceOrigin)}}</text>
+      <promotion-percent promotion="{{product.saleOff}}" />
+    </view>
+    <package-info-item title="Thời hạn" value="{{product.packageTime}}" />
+    <info-product-detail contents="{{details}}" />
+    <similar-product listProduct="{{data.similarProducts}}" />
+  </view>
+  <view class="product-detail-bottom">
+    <button-app type="outline" title="Thêm vào giỏ hàng" onTap="onAddToCart" className="width-button-bottom button-add-to-card text-button" />
+    <button-app title="Mua ngay" className="width-button-bottom button-buy-now text-button" />
+  </view>
+</view>
+
+<toast isShow="{{toast.isShow}}" content="{{toast.content}}" showAt="{{toast.showAt}}" onCancel="hideToast" />

@@ -1,0 +1,6 @@
+<view class="p-m">
+  <review-item />
+  <review-item />
+  <review-item />
+  <review-item />
+</view>

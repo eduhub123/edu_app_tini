@@ -1,0 +1,14 @@
+.image-cart-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.image-cart {
+  width: 70%;
+  height: 70%;
+}

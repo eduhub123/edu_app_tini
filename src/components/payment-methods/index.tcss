@@ -1,0 +1,7 @@
+.picker-wrap {
+  border: 1px solid #ebebf0;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}

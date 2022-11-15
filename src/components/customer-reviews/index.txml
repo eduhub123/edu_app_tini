@@ -1,0 +1,10 @@
+<view class="my-m">
+  <text class="title">Đánh giá của khách hàng</text>
+  <view tiki:if="{{reviews.length > 0}}">
+    <review-item />
+  </view>
+  <view class="d-flex align-items-center justify-center mt-s" onTap="goToReview">
+    <text class="color-red">Xem thêm</text>
+    <icon type="arrow_right" color="#FF4B4B" />
+  </view>
+</view>

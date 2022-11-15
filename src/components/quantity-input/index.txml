@@ -1,0 +1,9 @@
+<view class="d-flex">
+  <view class="input-wrap button-change-quantity {{value <=1 ? 'button-disabled' : ''}}" onTap="_onReduceQuantity">
+    <icon type="minus" />
+  </view>
+  <input value="{{valueInput}}" type="number" class="input-quantity" onInput="onChangeInput" maxlength="4" controlled="true" />
+  <view class="input-wrap button-change-quantity {{value >= 9999 ? 'button-disabled' : ''}}" onTap="_onIncreasingQuantity">
+    <icon type="plus" />
+  </view>
+</view>

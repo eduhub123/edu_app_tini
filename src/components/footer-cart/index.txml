@@ -1,0 +1,31 @@
+<import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+
+<view class="hr-top footer-cart-wrap">
+  <bottom-sheet show="{{showPopupDiscount}}" title="Mã giảm giá" buttonCls="button-popup-discount-code" buttonTitle="Đồng ý" onClose="onTogglePopupDiscount">
+    <view class="p-m">
+      <discount-code-item />
+      <discount-code-item />
+      <discount-code-item />
+      <discount-code-item />
+      <discount-code-item />
+      <discount-code-item />
+    </view>
+  </bottom-sheet>
+  <view class="d-flex p-m hr" onTap="onTogglePopupDiscount">
+    <view class="d-flex align-items-center flex-1">
+      <icon-app type="discount" size="24" />
+      <text class="note-bold ml-s">Mã giảm giá</text>
+    </view>
+    <view class="d-flex align-items-center">
+      <text class="note">Thêm</text>
+      <icon type="arrow_right" />
+    </view>
+  </view>
+  <view class="p-m d-flex">
+    <view class="flex-1">
+      <text class="d-block note color-gray">Tổng thanh toán</text>
+      <text class="d-block title color-black ">{{moneyFormatter(699000)}}</text>
+    </view>
+    <button-app title="{{titleButton}} {{totalQuantity ? '('+totalQuantity+')' : ''}}" onTap="_onTapBuyNow" />
+  </view>
+</view>

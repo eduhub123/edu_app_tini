@@ -1,0 +1,4 @@
+<view class="pt-m">
+  <text class="color-black monkey-story text-center d-block my-m">{{content.title}}</text>
+  <rich-text nodes="{{contentConvert}}" />
+</view>

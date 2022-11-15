@@ -1,0 +1,20 @@
+.btnConfirm {
+  background-color: #ff4b4b;
+  border: none;
+}
+
+.btnConfirm:hover {
+  background-color: #ff4b4b;
+}
+
+.input-contact {
+  flex: 1;
+  margin-left: 16px;
+  border: none;
+  text-align: right;
+}
+
+.input-contact-wrap {
+  display: flex;
+  align-items: center;
+}

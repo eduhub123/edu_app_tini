@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "promotion-percent": "components/promotion-percent/index",
+    "similar-product-item": "components/similar-product-item/index"
+  }
+}

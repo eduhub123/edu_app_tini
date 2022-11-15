@@ -1,0 +1,28 @@
+.input-wrap {
+  min-height: 22px;
+  min-width: 22px;
+  border-radius: 4px;
+  border: 1px solid #dddde3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4px;
+  padding: 8px;
+}
+
+.button-change-quantity:hover {
+  cursor: pointer;
+}
+
+.button-disabled {
+  cursor: pointer !important;
+  background-color: #dddde3;
+}
+
+.input-quantity {
+  height: 42px;
+  margin-right: 4px;
+  font-size: 18px;
+  text-align: center;
+  width: 65px;
+}

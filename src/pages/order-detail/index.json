@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "Đơn hàng",
+  "usingComponents": {
+    "list-product": "components/order-detail/index",
+    "payment-detail": "components/payment-detail/index"
+  }
+}

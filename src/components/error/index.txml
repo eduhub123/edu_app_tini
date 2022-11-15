@@ -1,0 +1,9 @@
+<view class="box">
+  <view class="error alert">
+    <view class="alert-body">
+      <text class="d-block title">Opps! Có lỗi xảy ra</text>
+      <text tiki:if="{{message}}" class="d-block note">{{message}}</text>
+      <text class="d-block note">Vui lòng liên hệ 1900636052 để được hỗ trợ</text>
+    </view>
+  </view>
+</view>

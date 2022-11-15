@@ -1,0 +1,4 @@
+<view class="info-item-wrap mt-m">
+  <text class="d-block note">{{title}}</text>
+  <text class="note-bold">{{value}}</text>
+</view>

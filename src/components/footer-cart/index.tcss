@@ -1,0 +1,12 @@
+.footer-cart-wrap {
+  background-color: #fff;
+}
+
+.button-popup-discount-code {
+  background-color: #ee202e;
+  border: none;
+}
+
+.button-popup-discount-code:hover {
+  background-color: #ba5960;
+}
