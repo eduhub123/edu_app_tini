@@ -4,18 +4,18 @@
   <text class="title">Chi tiết thanh toán</text>
   <view class="d-flex hr py-xs">
     <text class="note">Tổng tiền hàng</text>
-    <text class="flex-1 note text-right ml-xs">{{moneyFormatter(22220)}}</text>
+    <text class="flex-1 note text-right ml-xs">{{moneyFormatter(totalMoney)}}</text>
   </view>
   <view class="d-flex hr py-xs">
     <text class="note">Phí</text>
-    <text class="flex-1 note text-right ml-xs">{{moneyFormatter(22220)}}</text>
+    <text class="flex-1 note text-right ml-xs">{{moneyFormatter(fee)}}</text>
   </view>
   <view class="d-flex hr py-xs">
     <text class="note">Giảm giá</text>
-    <text class="flex-1 note text-right ml-xs color-success">{{moneyFormatter(22220)}}</text>
+    <text class="flex-1 note text-right ml-xs color-success">{{moneyFormatter(discount)}}</text>
   </view>
   <view class="d-flex py-xs">
     <text class="note">Tổng thanh toán</text>
-    <text class="flex-1 note-bold text-right ml-xs">{{moneyFormatter(22220)}}</text>
+    <text class="flex-1 note-bold text-right ml-xs">{{moneyFormatter(totalPayment)}}</text>
   </view>
 </view>

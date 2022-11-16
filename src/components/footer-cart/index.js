@@ -2,6 +2,7 @@ Component({
   props: {
     titleButton: "",
     totalQuantity: 0,
+    totalMoney: 0,
     onTapBuyNow: () => {},
   },
   data: {

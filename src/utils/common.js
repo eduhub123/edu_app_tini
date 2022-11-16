@@ -4,19 +4,22 @@ export const moneyFormatter = (number, currency = " ₫") => {
 };
 import { URL_MEDIA } from "../services/url";
 
-const app = getApp();
-
 export function setNavigationBar() {
-  const quantityCart = app.cart.orderedProducts.lenght;
+  const app = getApp();
+
+  const totalQuantity = app.cart.totalQuantity;
   my.addIconsToNavigationBar({
     icons: [
       {
         image: "/public/assets/icons/cart.svg",
-        badge: String(quantityCart),
+        badge: "" + totalQuantity,
       },
     ],
     padding: 10,
   });
+}
+
+export function setTitleNavigationBar() {
   my.setNavigationBar({
     image: URL_MEDIA + "tini_app/LOGO_MONKEY.png",
     title: " ",

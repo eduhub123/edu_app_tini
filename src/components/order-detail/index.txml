@@ -2,27 +2,13 @@
 
 <view class="bg-white {{className}}">
   <text class="title">{{title}}</text>
-  <view class="d-flex hr py-s">
-    <view class="image-product-wrap" style="background-color: red">
-      <image src="https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg" class="image-product" />
-    </view>
+  <view tiki:for="{{listProduct}}" tiki:key="index" tiki:for-item="product" class="d-flex hr py-s">
+    <image src="{{product.image}}" class="image-product" />
     <view class="flex-1">
-      <text class="note">Monkey Junior 6 thang</text>
+      <text class="note">{{product.nameProduct}}</text>
       <view class="note-bold d-flex justify-space">
-        <text>1 x</text>
-        <text>{{moneyFormatter(699000)}}</text>
-      </view>
-    </view>
-  </view>
-  <view class="d-flex hr py-s">
-    <view class="image-product-wrap" style="background-color: red">
-      <image src="https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-6_044127357.jpg" class="image-product" />
-    </view>
-    <view class="flex-1">
-      <text class="note">Monkey Junior 6 thang</text>
-      <view class="note-bold d-flex justify-space">
-        <text>1 x</text>
-        <text>{{moneyFormatter(699000)}}</text>
+        <text>{{product.quantity}} x</text>
+        <text>{{moneyFormatter(product.price)}}</text>
       </view>
     </view>
   </view>

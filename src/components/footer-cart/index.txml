@@ -24,7 +24,7 @@
   <view class="p-m d-flex">
     <view class="flex-1">
       <text class="d-block note color-gray">Tổng thanh toán</text>
-      <text class="d-block title color-black ">{{moneyFormatter(699000)}}</text>
+      <text class="d-block title color-black ">{{moneyFormatter(totalMoney)}}</text>
     </view>
     <button-app title="{{titleButton}} {{totalQuantity ? '('+totalQuantity+')' : ''}}" onTap="_onTapBuyNow" />
   </view>

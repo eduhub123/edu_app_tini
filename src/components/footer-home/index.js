@@ -10,6 +10,7 @@ Component({
         },
       });
     },
+
     onTapYoutube() {
       navigateWithParams({
         page: "contact-monkey",

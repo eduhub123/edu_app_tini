@@ -1,9 +1,7 @@
 <import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
 
 <view class="d-flex package-item-home my-xs" onTap="_onTapPackage">
-  <view style="background-color: {{color}}" class="image-package-home-wrapper">
-    <image src="{{image}}" class="image-package-home" />
-  </view>
+  <image src="{{image}}" class="image-package-home-wrapper" />
   <view class="flex-1">
     <text class="note-medium color-black d-block">{{name}}</text>
     <view class="price-home">

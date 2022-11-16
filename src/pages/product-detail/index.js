@@ -1,9 +1,10 @@
 import queryString from "query-string";
-import { setNavigationBar } from "../../utils/common";
+import { setNavigationBar, setTitleNavigationBar } from "../../utils/common";
 import { getDetailByProductId, getCustomerReview } from "../../services";
 import { navigateWithParams, reLaunch } from "../../utils/navigate";
 
 Page({
+  disposableCollection: [],
   data: {
     isLoading: true,
     isError: false,
@@ -27,11 +28,12 @@ Page({
   },
 
   onReady() {
-    setNavigationBar();
+    setTitleNavigationBar();
   },
 
   onAddToCart() {
     getApp().addProduct(this.data.product);
+    setNavigationBar();
     this.showToast("Thêm vào giỏ hàng thành công!");
   },
 
@@ -78,6 +80,7 @@ Page({
             priceOrigin: detailRes.data.price_origin,
             packageTime: detailRes.data.package_time,
             saleOff: detailRes.data.sale_off,
+            image: detailRes.data.image,
           },
           banner: detailRes.data.slide,
           details: detailRes.data.detail,
@@ -103,5 +106,9 @@ Page({
     reLaunch({
       page: "home",
     });
+  },
+
+  onShow() {
+    setNavigationBar();
   },
 });

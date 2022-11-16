@@ -5,7 +5,7 @@ import {
 } from "../../services/index";
 import { products } from "../../constants/home";
 import { navigateWithParams } from "../../utils/navigate";
-import { setNavigationBar } from "../../utils/common";
+import { setNavigationBar, setTitleNavigationBar } from "../../utils/common";
 
 Page({
   data: {
@@ -76,10 +76,13 @@ Page({
 
   onReady() {
     this.loadData();
+    setTitleNavigationBar();
     setNavigationBar();
   },
 
-  onShow() {},
+  onShow() {
+    setNavigationBar();
+  },
 
   onHide() {},
 

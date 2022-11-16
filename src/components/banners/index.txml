@@ -5,7 +5,7 @@
     </carousel-item>
   </carousel>
 
-  <carousel tiki:else autoplay indicator-dots circular class="banners">
+  <carousel tiki:else autoplay indicator-dots circular class="banners" indicator-active-color="#FF4B4B">
     <carousel-item tiki:for="{{banners}}" tiki:key="index">
       <image class="w-full h-full" src="{{item}}" mode="widthFix" />
     </carousel-item>

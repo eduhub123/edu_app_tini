@@ -1,12 +1,13 @@
 {
   "name": "monkey-junior",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "tiki": {
     "appIdentifier": "earlystart.mini.app.tini",
     "buildNumber": 1
   },
   "dependencies": {
     "@tiki.vn/mini-html-parser2": "^0.0.4",
+    "@tiki.vn/tini-style": "^0.16.0",
     "@tiki.vn/tini-ui": "^0.16.0",
     "query-string": "^7.1.1"
   }

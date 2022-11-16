@@ -1,11 +1,11 @@
 <view class="order-confirm-wrap pt-s">
   <view class="body-order-confirm">
-    <order-detail title="Chi tiết đơn hàng" class="p-m" />
+    <order-detail title="Chi tiết đơn hàng" class="p-m" listProduct="{{order.orderedProducts}}" />
     <payment-methods />
     <info-contact />
-    <payment-detail />
+    <payment-detail totalMoney="{{order.price}}" fee="{{order.shippingFee}}" discount="{{order.coupon.discount}}" totalPayment="{{order.total}}" />
   </view>
   <view class="footer-order-confirm">
-    <footer-cart titleButton="Thanh toán" onTapBuyNow="onPayment" />
+    <footer-cart titleButton="Thanh toán" onTapBuyNow="onPayment" totalMoney="{{order.total}}" />
   </view>
 </view>

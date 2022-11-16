@@ -14,6 +14,7 @@ Page({
       shippingFee: 0,
       price: 0,
       total: 0,
+      totalQuantity: 0,
       coupon: {
         name: "",
         discount: 0,
@@ -29,10 +30,19 @@ Page({
       rightButton: "",
     },
     selectedIndex: "",
+    isChooseAllProduct: false,
   },
 
   onChangeQuantity(index, quantity) {
     app.changeQuantityProduct(index, quantity);
+  },
+
+  onChooseProduct(index, value) {
+    app.chooseProduct(index, value);
+  },
+
+  onChooseAllProduct() {
+    app.chooseAllProduct(!this.data.isChooseAllProduct);
   },
 
   onRemoveProduct() {
@@ -76,16 +86,24 @@ Page({
   },
 
   async loadData() {
+    const isNotChooseAll = app.cart.orderedProducts.some(
+      (item) => !item.choose
+    );
     this.setData({
       cart: app.cart,
+      isChooseAllProduct: !isNotChooseAll,
     });
   },
 
   async onLoad() {
     this.disposableCollection.push(
       app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
+        const isNotChooseAll = cart.orderedProducts.some(
+          (item) => !item.choose
+        );
         this.setData({
           cart,
+          isChooseAllProduct: !isNotChooseAll,
         });
       })
     );

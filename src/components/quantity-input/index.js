@@ -39,7 +39,6 @@ Component({
   },
 
   didUpdate() {
-    console.log(this.props.value);
     this.setData({
       valueInput: this.props.value,
     });

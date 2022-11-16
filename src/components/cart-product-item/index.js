@@ -9,6 +9,7 @@ Component({
     checked: false,
     onChangeQuantity: () => {},
     onTapRemoveProduct: () => {},
+    onChooseProduct: () => {},
   },
   methods: {
     _onChangeQuantity(quantity) {
@@ -17,6 +18,10 @@ Component({
 
     _onTapRemoveProduct() {
       this.props.onTapRemoveProduct(this.props.index);
+    },
+
+    _onChooseProduct({ detail }) {
+      this.props.onChooseProduct(this.props.index, detail.value);
     },
   },
 });
