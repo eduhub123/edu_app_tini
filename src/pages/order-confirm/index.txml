@@ -2,10 +2,10 @@
   <view class="body-order-confirm">
     <order-detail title="Chi tiết đơn hàng" class="p-m" listProduct="{{order.orderedProducts}}" />
     <payment-methods />
-    <info-contact />
-    <payment-detail totalMoney="{{order.price}}" fee="{{order.shippingFee}}" discount="{{order.coupon.discount}}" totalPayment="{{order.total}}" />
+    <info-contact customerInfo="{{userInfo}}" onChangeCustomerInfo="onChangeCustomerInfo" />
+    <payment-detail totalMoney="{{order.totalMoney}}" fee="{{order.shippingFee}}" discount="{{order.coupon.discount}}" totalPayment="{{order.totalPayment}}" />
   </view>
   <view class="footer-order-confirm">
-    <footer-cart titleButton="Thanh toán" onTapBuyNow="onPayment" totalMoney="{{order.total}}" />
+    <footer-cart titleButton="Thanh toán" onTapBuyNow="onPayment" totalMoney="{{order.totalPayment}}" />
   </view>
 </view>

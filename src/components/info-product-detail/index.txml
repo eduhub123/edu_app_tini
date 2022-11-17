@@ -15,7 +15,7 @@
   </view>
   <view tiki:else>
     <view tiki:for="{{contents}}" tiki:for-index="index" tiki:for-item="content">
-      <view class="info-product-detail-item">
+      <view class="info-product-detail-item {{index !== contents.length -1 ? 'hr' : ''}}">
         <check-circle />
         <text class="ml-s note-medium text-justify">{{content}}</text>
       </view>

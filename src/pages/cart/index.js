@@ -8,13 +8,12 @@ Page({
 
   data: {
     cart: {
-      buyer: {},
-      seller: {},
       orderedProducts: [],
       shippingFee: 0,
-      price: 0,
-      total: 0,
+      totalMoney: 0,
+      totalPayment: 0,
       totalQuantity: 0,
+      totalQuantityChoose: 0,
       coupon: {
         name: "",
         discount: 0,
@@ -80,9 +79,13 @@ Page({
   },
 
   onTapBuyNow() {
-    navigateWithParams({
-      page: "order-confirm",
-    });
+    if (app.userInfo.tikiId) {
+      navigateWithParams({
+        page: "order-confirm",
+      });
+    } else {
+      app.loadUserInfo();
+    }
   },
 
   async loadData() {

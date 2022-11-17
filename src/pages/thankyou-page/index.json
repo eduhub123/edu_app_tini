@@ -1,4 +1,5 @@
 {
+  "showAddToDeviceButton": "NO",
   "usingComponents": {
     "button-app": "components/button-app/index"
   }

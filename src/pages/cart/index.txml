@@ -4,7 +4,7 @@
       <view class="d-flex" onTap="onChooseAllProduct">
         <checkbox checked="{{isChooseAllProduct}}" color="#FF4B4B" />
       </view>
-      <text class="note-medium ml-s">Chọn tất cả</text>
+      <text class="note-medium ml-s">Chọn tất cả ({{cart.totalQuantity}} sản phẩm)</text>
     </view>
     <view tiki:for="{{cart.orderedProducts}}" tiki:key="index" tiki:for-item="product">
       <cart-product-item index="{{index}}" name="{{product.nameProduct}}" price="{{product.price}}" image="{{product.image}}" color="{{product.color}}" quantity="{{product.quantity}}" checked="{{product.choose}}" onChangeQuantity="onChangeQuantity" onTapRemoveProduct="confirmRemoveOrder" onChooseProduct="onChooseProduct" />
@@ -14,7 +14,7 @@
     <text class="info italic color-gray">Chưa có sản phẩm nào trong giỏ hàng.\nVui lòng chọn sản phẩm muốn mua để tiếp tục!</text>
   </view>
   <view class="cart-footer">
-    <footer-cart titleButton="Mua ngay" totalMoney="{{cart.total}}" totalQuantity="{{cart.totalQuantity}}" onTapBuyNow="onTapBuyNow" />
+    <footer-cart disabled="{{cart.totalQuantityChoose <= 0}}" titleButton="Mua ngay" totalMoney="{{cart.totalPayment}}" totalQuantity="{{cart.totalQuantityChoose}}" onTapBuyNow="onTapBuyNow" />
   </view>
 </view>
 

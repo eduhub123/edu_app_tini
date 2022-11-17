@@ -1,5 +1,6 @@
 {
   "defaultTitle": "Đơn hàng",
+  "showAddToDeviceButton": "NO",
   "usingComponents": {
     "list-product": "components/order-detail/index",
     "payment-detail": "components/payment-detail/index"

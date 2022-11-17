@@ -1,6 +1,6 @@
 {
   "defaultTitle": "Giỏ hàng",
-  "hideAddToDeviceButton": "YES",
+  "showAddToDeviceButton": "NO",
   "usingComponents": {
     "footer-cart": "components/footer-cart/index",
     "cart-product-item": "components/cart-product-item/index",

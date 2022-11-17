@@ -26,3 +26,13 @@ export const getCustomerReview = (productId, limit, page) => {
     path: `api/tini-app/get-customer-reviewer?product_id=${productId}&limit=${limit}&page=${page}`,
   });
 };
+
+export const getRelatedProduct = (productId) => {
+  return request({
+    url: URL_EDU,
+    path:
+      "api/tini-app/get-related-products-by-product-id" +
+      "?product_id=" +
+      productId,
+  });
+};

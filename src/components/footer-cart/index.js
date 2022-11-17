@@ -3,6 +3,7 @@ Component({
     titleButton: "",
     totalQuantity: 0,
     totalMoney: 0,
+    disabled: false,
     onTapBuyNow: () => {},
   },
   data: {

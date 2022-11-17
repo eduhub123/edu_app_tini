@@ -27,3 +27,16 @@
   color: #ff4b4b;
   border: 1px solid #ff4b4b;
 }
+
+.disable-solid {
+  background-color: #ccc;
+}
+
+.disable-solid:hover {
+  background-color: #ccc;
+}
+
+.disable-outline {
+  color: #ccc;
+  border: 1px solid #ccc;
+}

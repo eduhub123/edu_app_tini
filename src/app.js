@@ -5,19 +5,24 @@ App({
   cartEvent: new EventEmitter(),
 
   cart: {
-    buyer: {},
-    seller: {},
     orderedProducts: [],
-    productId: "",
     shippingFee: 0,
-    price: 0,
-    total: 0,
+    totalMoney: 0,
+    totalPayment: 0,
     totalQuantity: 0,
+    totalQuantityChoose: 0,
     coupon: {
       name: "",
       discount: 0,
       isValid: false,
     },
+  },
+
+  userInfo: {
+    tikiId: "",
+    fullName: "",
+    phone: "",
+    email: "",
   },
 
   async loadCart() {
@@ -40,8 +45,10 @@ App({
     const position = this.cart.orderedProducts.findIndex(
       (item) => item.id === product.id
     );
-    if (position !== -1) this.cart.orderedProducts[position].quantity += 1;
-    else
+    if (position !== -1) {
+      this.cart.orderedProducts[position].quantity += 1;
+      this.cart.orderedProducts[position].choose = true;
+    } else
       this.cart.orderedProducts.push({ ...product, quantity: 1, choose: true });
 
     this.calculatePrices();
@@ -55,17 +62,22 @@ App({
 
   calculatePrices() {
     const { shippingFee, coupon, orderedProducts } = this.cart;
-    const price = orderedProducts.reduce((acc, curr) => {
+    const totalMoney = orderedProducts.reduce((acc, curr) => {
       return curr.choose ? acc + curr.price * curr.quantity : acc;
     }, 0);
-    const totalQuantity = orderedProducts.reduce((acc, curr) => {
+    const totalQuantityChoose = orderedProducts.reduce((acc, curr) => {
       return curr.choose ? acc + curr.quantity : acc;
     }, 0);
-    const total = price > 0 ? price + shippingFee - coupon.discount : 0;
+    const totalQuantity = orderedProducts.reduce((acc, curr) => {
+      return acc + curr.quantity;
+    }, 0);
+    const totalPayment =
+      totalMoney > 0 ? totalMoney + shippingFee - coupon.discount : 0;
     this.cart = {
       ...this.cart,
-      price,
-      total,
+      totalMoney,
+      totalQuantityChoose,
+      totalPayment,
       totalQuantity,
     };
 
@@ -122,9 +134,11 @@ App({
     this.cart = {
       ...this.cart,
       orderedProducts: [],
-      price: 0,
-      total: 0,
+      shippingFee: 0,
+      totalMoney: 0,
+      totalPayment: 0,
       totalQuantity: 0,
+      totalQuantityChoose: 0,
       coupon: {
         name: "",
         discount: 0,
@@ -138,5 +152,20 @@ App({
   // Life cycle
   onShow() {
     this.loadCart();
+    this.loadUserInfo();
+  },
+
+  loadUserInfo() {
+    my.getUserInfo({
+      success: (res) => {
+        const phone = res.phone.replace("+84", "0");
+        this.userInfo = {
+          tikiId: res.customerId,
+          fullName: res.name,
+          phone: phone,
+          email: res.email,
+        };
+      },
+    });
   },
 });

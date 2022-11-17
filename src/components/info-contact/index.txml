@@ -10,15 +10,15 @@
   </view>
   <view class="d-flex hr py-xs">
     <text class="note">Họ tên</text>
-    <text class="flex-1 note-bold text-right ml-xs">User name</text>
+    <text class="flex-1 note-bold text-right ml-xs">{{customerInfo.fullName}}</text>
   </view>
   <view class="d-flex hr py-xs">
     <text class="note">Số điện thoại</text>
-    <text class="flex-1 note-bold text-right ml-xs">User name</text>
+    <text class="flex-1 note-bold text-right ml-xs">{{customerInfo.phone}}</text>
   </view>
   <view class="d-flex py-xs">
     <text class="note">Email</text>
-    <text class="flex-1 note-bold text-right ml-xs">User name</text>
+    <text class="flex-1 note-bold text-right ml-xs">{{customerInfo.email}}</text>
   </view>
-  <popup-edit-info-contact show="{{showPopupEdit}}" onClose="onHidePopupEdit" />
+  <popup-edit-info-contact show="{{showPopupEdit}}" onClose="onHidePopupEdit" customerInfo="{{customerInfo}}" onChangeCustomerInfo="_onChangeCustomerInfo" />
 </view>

@@ -1,6 +1,5 @@
 .info-product-detail-item {
   display: flex;
-  border-bottom: 1px solid #ebebf0;
   padding: 16px 0;
 }
 

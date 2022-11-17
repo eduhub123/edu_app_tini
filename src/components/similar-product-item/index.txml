@@ -1,11 +1,8 @@
 <import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
 
 <view onTap="onTapSimularProduct">
-  <view style="background-color: {{color}}" class="similar-image-wrap">
-    <image src="{{image}}" class="similar-image" />
-  </view>
+  <image src="{{image}}" class="similar-image" mode="widthFix" />
   <text class="d-block note" number-of-lines="{{1}}">{{name}}</text>
-  <star-rating rating="3" />
   <view class="d-flex align-items-center">
     <text class="note-bold">{{moneyFormatter(price)}}</text>
     <promotion-percent promotion="{{promotion}}" />

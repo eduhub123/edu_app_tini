@@ -11,8 +11,10 @@ export function setNavigationBar() {
   my.addIconsToNavigationBar({
     icons: [
       {
-        image: "/public/assets/icons/cart.svg",
+        image: "/public/assets/icons/ic_cart.png",
         badge: "" + totalQuantity,
+        width: 20,
+        height: 20,
       },
     ],
     padding: 10,

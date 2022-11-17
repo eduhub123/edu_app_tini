@@ -17,7 +17,6 @@
     <view>
       <text class="info color-black">{{product.nameProduct}}</text>
     </view>
-    <star-rating rating="{{product.rating}}" />
     <view class="d-flex align-items-center">
       <text class="title color-black mr-xs">{{moneyFormatter(product.price)}}</text>
       <text class="info color-gray text-through">{{moneyFormatter(product.priceOrigin)}}</text>
@@ -25,11 +24,11 @@
     </view>
     <package-info-item title="Thời hạn" value="{{product.packageTime}}" />
     <info-product-detail contents="{{details}}" />
-    <similar-product listProduct="{{data.similarProducts}}" />
+    <similar-product listProduct="{{relatedProducts}}" />
   </view>
   <view class="product-detail-bottom">
     <button-app type="outline" title="Thêm vào giỏ hàng" onTap="onAddToCart" className="width-button-bottom button-add-to-card text-button" />
-    <button-app title="Mua ngay" className="width-button-bottom button-buy-now text-button" />
+    <button-app title="Mua ngay" onTap="onBuyNow" className="width-button-bottom button-buy-now text-button" />
   </view>
 </view>
 

@@ -1,5 +1,6 @@
 {
   "defaultTitle": "Xác nhận đơn hàng",
+  "showAddToDeviceButton": "NO",
   "usingComponents": {
     "order-detail": "components/order-detail/index",
     "payment-methods": "components/payment-methods/index",

@@ -1,6 +1,6 @@
 import queryString from "query-string";
 import { setNavigationBar, setTitleNavigationBar } from "../../utils/common";
-import { getDetailByProductId, getCustomerReview } from "../../services";
+import { getDetailByProductId, getRelatedProduct } from "../../services";
 import { navigateWithParams, reLaunch } from "../../utils/navigate";
 
 Page({
@@ -25,16 +25,29 @@ Page({
       content: "",
       showAt: "",
     },
+    relatedProducts: [],
   },
 
   onReady() {
     setTitleNavigationBar();
   },
 
+  onShow() {
+    setNavigationBar();
+  },
+
   onAddToCart() {
     getApp().addProduct(this.data.product);
     setNavigationBar();
     this.showToast("Thêm vào giỏ hàng thành công!");
+  },
+
+  onBuyNow() {
+    getApp().chooseAllProduct(false);
+    getApp().addProduct(this.data.product);
+    navigateWithParams({
+      page: "cart",
+    });
   },
 
   onCustomIconEvent() {
@@ -69,7 +82,10 @@ Page({
     });
     try {
       const { productId } = queryString.parse(query);
-      const [detailRes] = await Promise.all([getDetailByProductId(productId)]);
+      const [detailRes, relatedRes] = await Promise.all([
+        getDetailByProductId(productId),
+        getRelatedProduct(productId),
+      ]);
       if (detailRes.status === "success") {
         this.setData({
           product: {
@@ -91,6 +107,11 @@ Page({
           messageError: detailRes.message,
         });
       }
+      if (relatedRes.status === "success") {
+        this.setData({
+          relatedProducts: relatedRes.data,
+        });
+      }
     } catch {
       this.setData({
         isError: true,
@@ -106,9 +127,5 @@ Page({
     reLaunch({
       page: "home",
     });
-  },
-
-  onShow() {
-    setNavigationBar();
   },
 });

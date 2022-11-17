@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "tiki": {
     "appIdentifier": "earlystart.mini.app.tini",
-    "buildNumber": 1
+    "buildNumber": 5,
+    "metadata": {
+      "permissions": [
+        "getUserPhoneAndEmail"
+      ]
+    }
   },
   "dependencies": {
     "@tiki.vn/mini-html-parser2": "^0.0.4",

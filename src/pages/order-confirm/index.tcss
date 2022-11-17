@@ -10,5 +10,5 @@
 }
 
 .body-order-confirm {
-  margin-bottom: 160px;
+  padding-bottom: 160px;
 }

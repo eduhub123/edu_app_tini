@@ -1,27 +1,5 @@
-.similar-image-wrap {
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 136px;
-  height: 136px;
-  margin-bottom: 8px;
-}
-
 .similar-image {
-  width: 80%;
-  height: 80%;
-}
-
-@media only screen and (min-width: 375px) {
-  .similar-image-wrap {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media only screen and (min-width: 769px) {
-  .similar-image-wrap {
-    width: 160px;
-    height: 160px;
-  }
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 8px;
 }

@@ -1,9 +1,7 @@
 <view class="bg-white p-m mt-xs">
   <text class="title">Phương thức thanh toán</text>
-  <picker title="Xin choaf" range="[1,2,3]">
-    <view class="picker-wrap mt-xs d-flex align-item-center">
-      <text class="flex-1">Chọn phương thức thanh toán</text>
-      <icon type="arrow_right" />
-    </view>
-  </picker>
+  <view class="picker-wrap mt-xs d-flex align-item-center">
+    <image src="/public/assets/icons/tiki.png" class="logo-tiki" />
+    <text class="flex-1">Thanh toán với TiKi</text>
+  </view>
 </view>

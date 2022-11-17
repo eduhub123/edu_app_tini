@@ -2,12 +2,14 @@ Component({
   props: {
     title: "",
     className: "",
-    onTap: () => {},
     type: "solid",
+    disabled: false,
+    onTap: () => {},
   },
+
   methods: {
     _onTap() {
-      this.props.onTap();
+      !this.props.disabled ? this.props.onTap() : () => {};
     },
   },
 });

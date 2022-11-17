@@ -11,7 +11,7 @@ Page({
   data: {
     isLoading: true,
     banners: [],
-    chooseAppId: 2,
+    chooseAppId: "",
     products: products,
     packages: {},
     monkeyStoryContent: {},
@@ -55,7 +55,7 @@ Page({
 
   onChangeAppId(appId) {
     this.setData({
-      chooseAppId: appId,
+      chooseAppId: appId !== this.data.chooseAppId ? appId : "",
     });
   },
 

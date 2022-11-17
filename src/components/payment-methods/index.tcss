@@ -4,4 +4,11 @@
   border-radius: 12px;
   font-size: 14px;
   font-weight: 700;
+  align-items: center;
+}
+
+.logo-tiki {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
 }

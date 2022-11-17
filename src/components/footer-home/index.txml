@@ -2,11 +2,11 @@
   <text class="contact-monkey d-block mb-xxs">Liên hệ với Monkey</text>
   <text class="text">Hotline & Dịch vụ khách hàng</text>
   <view class="d-flex align-items-center phone-wrap">
-    <icon type="support" size="22" class="mr-s" color="#fff" />
+    <image src="/public/assets/icons/ic_phone.svg" class="icon-contact mr-s" mode="widthFix" />
     <text class="note-bold">1900 63 60 52</text>
   </view>
   <view class="d-flex align-items-center phone-wrap">
-    <icon type="chat" size="22" class="mr-s" color="#fff" />
+    <image src="/public/assets/icons/ic_sms.svg" class="icon-contact mr-s" mode="widthFix" />
     <text class="note-bold">monkeyxinchao@monkey.edu.vn</text>
   </view>
   <text class="text d-block my-m">7h00 - 22h00 các ngày trong tuần</text>
@@ -18,7 +18,7 @@
     <view class="icon-footer-wrap mr-s" onTap="onTapYoutube">
       <image src="/public/assets/icons/youtube.svg" class="icon-footer" />
     </view>
-    <image src="/public/assets/icons/DMCA.svg" class="icon-footer-other mr-s" />
-    <image src="/public/assets/icons/certificate.svg" class="icon-footer-other mr-s" />
+    <image src="/public/assets/icons/DMCA.png" class="icon-footer-other mr-s" mode="widthFix" />
+    <image src="/public/assets/icons/certificate.png" class="icon-footer-other mr-s" mode="widthFix" />
   </view>
 </view>

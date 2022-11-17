@@ -2,7 +2,7 @@
   <text class="title mb-m d-block">Sản phẩm tương tự</text>
   <view class="similar-wrap">
     <view tiki:for="{{listProduct}}" tiki:key="index" tiki:for-item="product" class="similar-item">
-      <similar-product-item id="{{product.id}}" color="{{product.color}}" image="{{product.image}}" name="{{product.name}}" price="{{product.price}}" promotion="{{product.promotion}}" />
+      <similar-product-item id="{{product.product_id}}" color="{{product.color}}" image="{{product.image}}" name="{{product.product_name}}" price="{{product.price}}" promotion="{{product.sale_off}}" />
     </view>
   </view>
 </view>
