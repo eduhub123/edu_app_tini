@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "tiki": {
     "appIdentifier": "earlystart.mini.app.tini",
-    "buildNumber": 9,
+    "buildNumber": 10,
     "metadata": {
       "permissions": [
         "getUserPhoneAndEmail"

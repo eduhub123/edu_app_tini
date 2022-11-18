@@ -11,7 +11,6 @@ Component({
   },
   methods: {
     onTapSimularProduct() {
-      console.log(this.props.id);
       navigateWithParams({
         page: "product-detail",
         params: {

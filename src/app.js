@@ -1,5 +1,6 @@
 import { EMITTERS } from "./constants/app";
 import EventEmitter from "./utils/event";
+import { setNavigationBar } from "./utils/common";
 
 App({
   cartEvent: new EventEmitter(),
@@ -141,6 +142,7 @@ App({
     };
 
     this.calculatePrices();
+    setNavigationBar();
   },
 
   clearCart() {
@@ -159,6 +161,15 @@ App({
   loadUserInfo() {
     my.getUserInfo({
       success: (res) => {
+        const phone = res.phone?.replace("+84", "0");
+        this.userInfo = {
+          tikiId: res.customerId,
+          fullName: res.name,
+          phone: phone,
+          email: res.email,
+        };
+      },
+      complete: (res) => {
         my.getStorage({
           key: "customerId",
           success: (_res) => {
@@ -167,19 +178,10 @@ App({
             }
           },
         });
-
         my.setStorage({
           key: "customerId",
           data: res.customerId,
         });
-
-        const phone = res.phone?.replace("+84", "0");
-        this.userInfo = {
-          tikiId: res.customerId,
-          fullName: res.name,
-          phone: phone,
-          email: res.email,
-        };
       },
     });
   },
