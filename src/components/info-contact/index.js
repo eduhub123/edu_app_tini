@@ -5,6 +5,7 @@ Component({
       phone: "",
       email: "",
     },
+    error: "",
     onChangeCustomerInfo: () => {},
   },
 

@@ -3,11 +3,9 @@ import { navigateWithParams } from "../../utils/navigate";
 Component({
   methods: {
     onTapContactMonkey() {
-      navigateWithParams({
-        page: "contact-monkey",
-        params: {
-          myUrl: "https://tinyurl.com/tiki-daily",
-        },
+      my.openNativeAppStore({
+        appleStoreId: "1633038599",
+        googlePlayId: "4972139065721812308",
       });
     },
   },

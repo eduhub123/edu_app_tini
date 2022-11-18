@@ -30,6 +30,7 @@ Page({
     },
     selectedIndex: "",
     isChooseAllProduct: false,
+    userInfo: {},
   },
 
   onChangeQuantity(index, quantity) {

@@ -27,7 +27,7 @@
 }
 
 .icon-footer-other {
-  width: 94px;
+  width: 120px;
 }
 
 .icon-contact {
@@ -36,6 +36,6 @@
 
 @media only screen and (max-width: 320px) {
   .icon-footer-other {
-    width: 80px;
+    width: 100px;
   }
 }

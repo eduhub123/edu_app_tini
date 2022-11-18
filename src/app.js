@@ -25,20 +25,14 @@ App({
     email: "",
   },
 
-  async loadCart() {
-    try {
-      my.getStorage({
-        key: "cart",
-        success: (res) => {
-          const cart = res.data;
-          this.cart = { ...this.cart, ...cart };
-        },
-      });
-    } catch {}
-  },
-
-  setProductId(productId) {
-    this.productId = productId;
+  loadCart() {
+    my.getStorage({
+      key: "cart",
+      success: (res) => {
+        const cart = res.data;
+        this.cart = { ...this.cart, ...cart };
+      },
+    });
   },
 
   addProduct(product) {
@@ -149,6 +143,13 @@ App({
     this.calculatePrices();
   },
 
+  clearCart() {
+    const newData = this.cart.orderedProducts.filter((item) => !item.choose);
+    this.cart.orderedProducts = newData;
+
+    this.calculatePrices();
+  },
+
   // Life cycle
   onShow() {
     this.loadCart();
@@ -158,7 +159,21 @@ App({
   loadUserInfo() {
     my.getUserInfo({
       success: (res) => {
-        const phone = res.phone.replace("+84", "0");
+        my.getStorage({
+          key: "customerId",
+          success: (_res) => {
+            if (_res.data && _res.data !== res.customerId) {
+              this.resetCart();
+            }
+          },
+        });
+
+        my.setStorage({
+          key: "customerId",
+          data: res.customerId,
+        });
+
+        const phone = res.phone?.replace("+84", "0");
         this.userInfo = {
           tikiId: res.customerId,
           fullName: res.name,

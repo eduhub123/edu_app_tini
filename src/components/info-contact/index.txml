@@ -20,5 +20,7 @@
     <text class="note">Email</text>
     <text class="flex-1 note-bold text-right ml-xs">{{customerInfo.email}}</text>
   </view>
+  <text class="flex-1 info italic color-red">{{error}}</text>
+
   <popup-edit-info-contact show="{{showPopupEdit}}" onClose="onHidePopupEdit" customerInfo="{{customerInfo}}" onChangeCustomerInfo="_onChangeCustomerInfo" />
 </view>

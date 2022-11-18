@@ -1,8 +1,8 @@
 <view class="order-confirm-wrap pt-s">
   <view class="body-order-confirm">
-    <order-detail title="Chi tiết đơn hàng" class="p-m" listProduct="{{order.orderedProducts}}" />
+    <order-detail title="Chi tiết đơn hàng" class="p-m" listProduct="{{order.orderedProducts}}" error="{{errors.listProduct}}" />
     <payment-methods />
-    <info-contact customerInfo="{{userInfo}}" onChangeCustomerInfo="onChangeCustomerInfo" />
+    <info-contact customerInfo="{{userInfo}}" onChangeCustomerInfo="onChangeCustomerInfo" error="{{errors.userInfo}}" />
     <payment-detail totalMoney="{{order.totalMoney}}" fee="{{order.shippingFee}}" discount="{{order.coupon.discount}}" totalPayment="{{order.totalPayment}}" />
   </view>
   <view class="footer-order-confirm">

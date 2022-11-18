@@ -17,3 +17,12 @@ export const reLaunch = ({ page, params = null }) => {
     })}`,
   });
 };
+
+export const redirectTo = ({ page, params = null }) => {
+  my.redirectTo({
+    url: `${queryString.stringifyUrl({
+      url: `pages/${page}/index`,
+      query: params,
+    })}`,
+  });
+};

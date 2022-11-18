@@ -3,5 +3,6 @@ Component({
     title: "",
     className: "",
     listProduct: [],
+    error: "",
   },
 });

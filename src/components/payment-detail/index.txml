@@ -15,7 +15,7 @@
     <text class="flex-1 note text-right ml-xs color-success">{{moneyFormatter(discount)}}</text>
   </view>
   <view class="d-flex py-xs">
-    <text class="note">Tổng thanh toán</text>
+    <text class="note-bold">Tổng thanh toán</text>
     <text class="flex-1 note-bold text-right ml-xs">{{moneyFormatter(totalPayment)}}</text>
   </view>
 </view>

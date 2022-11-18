@@ -12,4 +12,5 @@
       </view>
     </view>
   </view>
+  <text class="mt-s info italic color-red">{{error}}</text>
 </view>

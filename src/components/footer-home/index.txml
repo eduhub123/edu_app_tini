@@ -10,14 +10,7 @@
     <text class="note-bold">monkeyxinchao@monkey.edu.vn</text>
   </view>
   <text class="text d-block my-m">7h00 - 22h00 các ngày trong tuần</text>
-  <text class="text d-block my-m">Kết nối với Monkey</text>
   <view class="d-flex align-items-center">
-    <view class="icon-footer-wrap mr-s" onTap="onTapFacebook">
-      <image src="/public/assets/icons/facebook.svg" class="icon-footer" />
-    </view>
-    <view class="icon-footer-wrap mr-s" onTap="onTapYoutube">
-      <image src="/public/assets/icons/youtube.svg" class="icon-footer" />
-    </view>
     <image src="/public/assets/icons/DMCA.png" class="icon-footer-other mr-s" mode="widthFix" />
     <image src="/public/assets/icons/certificate.png" class="icon-footer-other mr-s" mode="widthFix" />
   </view>
