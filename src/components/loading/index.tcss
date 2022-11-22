@@ -82,10 +82,10 @@
     transform: translateY(0px) scale(1);
   }
   50% {
-    transform: translateY(-50px) scale(0.75);
+    transform: translateY(-15px) scale(0.75);
   }
   51% {
-    transform: translateY(-50px) scale(0.75);
+    transform: translateY(-15px) scale(0.75);
   }
   100% {
     transform: translateY(0px) scale(1);

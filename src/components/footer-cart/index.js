@@ -4,6 +4,7 @@ Component({
     totalQuantity: 0,
     totalMoney: 0,
     disabled: false,
+    isLoading: false,
     onTapBuyNow: () => {},
   },
   data: {

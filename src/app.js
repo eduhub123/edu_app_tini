@@ -36,6 +36,10 @@ App({
     });
   },
 
+  editUserInfo({ tikiId, fullName, phone, email }) {
+    this.userInfo = { tikiId, fullName, phone, email };
+  },
+
   addProduct(product) {
     const position = this.cart.orderedProducts.findIndex(
       (item) => item.id === product.id
@@ -159,15 +163,18 @@ App({
   },
 
   loadUserInfo() {
+    my.getAuthCode({
+      success: (res) => console.log(res),
+    });
     my.getUserInfo({
       success: (res) => {
         const phone = res.phone?.replace("+84", "0");
-        this.userInfo = {
+        this.editUserInfo({
           tikiId: res.customerId,
           fullName: res.name,
           phone: phone,
           email: res.email,
-        };
+        });
       },
       complete: (res) => {
         my.getStorage({

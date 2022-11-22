@@ -4,6 +4,7 @@ Component({
     className: "",
     type: "solid",
     disabled: false,
+    isLoading: false,
     onTap: () => {},
   },
 

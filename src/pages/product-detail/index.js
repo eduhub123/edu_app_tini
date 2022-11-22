@@ -18,6 +18,7 @@ Page({
       priceOrigin: 0,
       packageTime: "",
       saleOff: 0,
+      promotionId: "",
     },
     details: [],
     toast: {
@@ -97,6 +98,7 @@ Page({
             packageTime: detailRes.data.package_time,
             saleOff: detailRes.data.sale_off,
             image: detailRes.data.image,
+            promotion: detailRes.data.promotion?.[0],
           },
           banner: detailRes.data.slide,
           details: detailRes.data.detail,

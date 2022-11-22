@@ -26,6 +26,6 @@
       <text class="d-block note color-gray">Tổng thanh toán</text>
       <text class="d-block title color-black ">{{moneyFormatter(totalMoney)}}</text>
     </view>
-    <button-app disabled="{{disabled}}" title="{{titleButton}} {{totalQuantity ? '('+totalQuantity+')' : ''}}" onTap="_onTapBuyNow" />
+    <button-app disabled="{{disabled}}" isLoading="{{isLoading}}" title="{{titleButton}} {{totalQuantity ? '('+totalQuantity+')' : ''}}" onTap="_onTapBuyNow" />
   </view>
 </view>

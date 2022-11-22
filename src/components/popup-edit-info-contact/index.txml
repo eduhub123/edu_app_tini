@@ -3,21 +3,21 @@
     <view class="hr">
       <view class="input-contact-wrap">
         <text>Họ tên</text>
-        <input value="{{dataForm.fullName}}" onInput="onChangeName" controlled maxlength="50" placeholder="Nhập họ tên" class="input-contact" type="text" />
+        <input value="{{dataForm.fullName}}" onInput="onChangeName" onBlur="onBlurName" maxlength="50" placeholder="Nhập họ tên" class="input-contact" type="text" />
       </view>
       <text tiki:if="{{errors.fullName}}" class="d-block info italic color-red">{{errors.fullName}}</text>
     </view>
     <view class="hr">
       <view class="input-contact-wrap">
         <text>Số điện thoại</text>
-        <input value="{{dataForm.phone}}" onInput="onChangePhone" maxlength="10" placeholder="Nhập số điện thoại" class="input-contact" type="tel" />
+        <input value="{{dataForm.phone}}" onInput="onChangePhone" onBlur="onBlurPhone" maxlength="10" placeholder="Nhập số điện thoại" class="input-contact" type="tel" />
       </view>
       <text tiki:if="{{errors.phone}}" class="d-block info italic color-red">{{errors.phone}}</text>
     </view>
     <view>
       <view class="input-contact-wrap">
         <text>Email</text>
-        <input value="{{dataForm.email}}" onInput="onChangeEmail" maxlength="100" controlled placeholder="Nhập email" class="input-contact" type="email" />
+        <input value="{{dataForm.email}}" onInput="onChangeEmail" onBlur="onBlurEmail" maxlength="100" placeholder="Nhập email" class="input-contact" type="email" />
       </view>
       <text tiki:if="{{errors.email}}" class="d-block info italic color-red">{{errors.email}}</text>
     </view>

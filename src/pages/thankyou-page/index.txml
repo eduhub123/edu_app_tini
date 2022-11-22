@@ -50,7 +50,7 @@
       <button-app className="flex-1 mr-ls" title="Xem đơn hàng" onTap="goToOrderDetail" />
     </view>
     <view tiki:else>
-      <button-app className="flex-1 mr-ls" title="Thanh toán lại" />
+      <button-app onTap="goToBack" className="flex-1 mr-ls" title="Thanh toán lại" />
     </view>
   </view>
 </view>

@@ -3,14 +3,14 @@
 }
 
 .banners .t-carousel-container .t-carousel-slides .t-carousel-item {
-  height: calc(100vw * 109 / 360);
-  min-width: calc(100% - 40px);
-  max-width: calc(100% - 40px);
+  /* height: calc(100vw * 109 / 360); */
+  min-width: 100%;
+  max-width: 100%;
   padding-left: 8px;
 }
 
 .banners .t-carousel-indicator {
-  margin-top: 24px;
+  margin-top: 12px;
   margin-bottom: 0;
 }
 

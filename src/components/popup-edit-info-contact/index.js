@@ -39,24 +39,33 @@ Component({
       }
     },
 
-    onChangeName({ detail }) {
+    onBlurName({ detail }) {
       this.setData({
         dataForm: { ...this.data.dataForm, fullName: detail.value },
       });
+    },
+
+    onBlurPhone({ detail }) {
+      this.setData({
+        dataForm: { ...this.data.dataForm, phone: detail.value },
+      });
+    },
+
+    onBlurEmail({ detail }) {
+      this.setData({
+        dataForm: { ...this.data.dataForm, email: detail.value },
+      });
+    },
+
+    onChangeName({ detail }) {
       this.onCheckName(detail.value);
     },
 
     onChangePhone({ detail }) {
-      this.setData({
-        dataForm: { ...this.data.dataForm, phone: detail.value },
-      });
       this.onCheckPhone(detail.value);
     },
 
     onChangeEmail({ detail }) {
-      this.setData({
-        dataForm: { ...this.data.dataForm, email: detail.value },
-      });
       this.onCheckEmail(detail.value);
     },
 

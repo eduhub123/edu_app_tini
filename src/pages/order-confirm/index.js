@@ -24,9 +24,11 @@ Page({
       email: "",
     },
     errors: {},
+    isLoading: false,
   },
 
   onPayment() {
+    this.setData({ isLoading: true });
     if (this.data.order.totalQuantityChoose <= 0) {
       return this.setData({
         errors: {
@@ -52,21 +54,42 @@ Page({
       });
     }
 
-    navigateWithParams({
-      page: "thankyou-page",
-      params: {
-        status: "success",
-        orderId: "ABC1511",
-        paymentMethod: "Thẻ Visa",
-        totalPayment: 16000000,
-        message: "",
+    my.makePayment({
+      orderId: "1",
+      success: () => {
+        console.log("s");
+        navigateWithParams({
+          page: "thankyou-page",
+          params: {
+            status: "success",
+            orderId: "ABC1511",
+            paymentMethod: "Thẻ Visa",
+            totalPayment: 16000000,
+            message: "",
+          },
+        });
+
+        app.clearCart();
       },
-    });
-
-    app.clearCart();
-
-    this.setData({
-      errors: {},
+      fail: () => {
+        console.log("e");
+        navigateWithParams({
+          page: "thankyou-page",
+          params: {
+            status: "error",
+            orderId: "ABC1511",
+            paymentMethod: "Thẻ Visa",
+            totalPayment: 16000000,
+            message: "",
+          },
+        });
+      },
+      complete: () => {
+        this.setData({
+          errors: {},
+          isLoading: false,
+        });
+      },
     });
   },
 

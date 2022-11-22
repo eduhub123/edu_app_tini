@@ -23,6 +23,7 @@
       <promotion-percent promotion="{{product.saleOff}}" />
     </view>
     <package-info-item title="Thời hạn" value="{{product.packageTime}}" />
+    <package-info-item tiki:if="{{product.promotion}}" title="Quà tặng" value="{{product.promotion.name}}" />
     <info-product-detail contents="{{details}}" />
     <similar-product listProduct="{{relatedProducts}}" />
   </view>

@@ -34,4 +34,8 @@ Page({
       page: "home",
     });
   },
+
+  goToBack() {
+    my.navigateBack();
+  },
 });

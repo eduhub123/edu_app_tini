@@ -5,7 +5,7 @@ Component({
     onTapContactMonkey() {
       my.openNativeAppStore({
         appleStoreId: "1633038599",
-        googlePlayId: "4972139065721812308",
+        googlePlayId: "com.earlystart.agent",
       });
     },
   },
