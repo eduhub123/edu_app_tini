@@ -6,6 +6,7 @@
     "payment-methods": "components/payment-methods/index",
     "info-contact": "components/info-contact/index",
     "payment-detail": "components/payment-detail/index",
-    "footer-cart": "components/footer-cart/index"
+    "footer-cart": "components/footer-cart/index",
+    "toast-bar": "@tiki.vn/tini-ui/es/toast-bar/index"
   }
 }

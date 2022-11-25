@@ -3,8 +3,21 @@ Component({
     value: 1,
     onChange: () => {},
   },
+
   data: {
     valueInput: 1,
+  },
+
+  didMount() {
+    this.setData({
+      valueInput: this.props.value,
+    });
+  },
+
+  didUpdate() {
+    this.setData({
+      valueInput: this.props.value,
+    });
   },
 
   methods: {
@@ -30,17 +43,5 @@ Component({
       const value = event.detail.value;
       this._onChange(Number(value));
     },
-  },
-
-  didMount() {
-    this.setData({
-      valueInput: this.props.value,
-    });
-  },
-
-  didUpdate() {
-    this.setData({
-      valueInput: this.props.value,
-    });
   },
 });

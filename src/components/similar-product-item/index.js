@@ -9,6 +9,7 @@ Component({
     price: 0,
     promotion: 0,
   },
+
   methods: {
     onTapSimularProduct() {
       navigateWithParams({

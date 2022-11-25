@@ -3,8 +3,8 @@ Component({
     isShow: false,
     headers: [],
     descriptions: [],
-    leftButton: 'OK',
-    rightButton: '',
+    leftButton: "OK",
+    rightButton: "",
     onClickLeftButton: () => {},
     onClickRightButton: () => {},
     onHide: () => {},
@@ -14,9 +14,11 @@ Component({
     _onClickLeftButton() {
       this.props.onClickLeftButton();
     },
+
     _onClickRightButton() {
       this.props.onClickRightButton();
     },
+
     _onHide() {
       this.props.onHide();
     },

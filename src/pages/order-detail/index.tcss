@@ -1,0 +1,14 @@
+.bottom-order-detail {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  box-shadow: -1px 0px 10px -1px rgba(0, 0, 0, 0.24);
+}
+
+.wrap-order-detail {
+  margin-bottom: 100px;
+}

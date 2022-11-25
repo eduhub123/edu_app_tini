@@ -33,6 +33,24 @@ Page({
     userInfo: {},
   },
 
+  onLoad() {
+    this.disposableCollection.push(
+      app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
+        const isNotChooseAll = cart.orderedProducts.some(
+          (item) => !item.choose
+        );
+        this.setData({
+          cart,
+          isChooseAllProduct: !isNotChooseAll,
+        });
+      })
+    );
+  },
+
+  onShow() {
+    this.loadData();
+  },
+
   onChangeQuantity(index, quantity) {
     app.changeQuantityProduct(index, quantity);
   },
@@ -97,23 +115,5 @@ Page({
       cart: app.cart,
       isChooseAllProduct: !isNotChooseAll,
     });
-  },
-
-  onLoad() {
-    this.disposableCollection.push(
-      app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
-        const isNotChooseAll = cart.orderedProducts.some(
-          (item) => !item.choose
-        );
-        this.setData({
-          cart,
-          isChooseAllProduct: !isNotChooseAll,
-        });
-      })
-    );
-  },
-
-  onShow() {
-    this.loadData();
   },
 });

@@ -4,9 +4,11 @@ Component({
   props: {
     content: {},
   },
+
   data: {
     contentConvert: [],
   },
+
   didMount() {
     parse(this.props.content.content, (err, nodes) => {
       if (!err) {

@@ -10,8 +10,6 @@ Page({
     message: "",
   },
 
-  data: {},
-
   onLoad(query) {
     const { status, orderId, paymentMethod, totalPayment, message } =
       queryString.parse(query);

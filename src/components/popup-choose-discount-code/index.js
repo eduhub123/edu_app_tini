@@ -39,6 +39,10 @@ Component({
     _coupon: { name: "", discount: 0, isValid: false },
   },
 
+  didMount() {
+    this.setCoupon();
+  },
+
   methods: {
     _onTogglePopupDiscount() {
       this.props.onTogglePopupDiscount();
@@ -60,9 +64,5 @@ Component({
     setCoupon() {
       this.setData({ _coupon: this.props.coupon });
     },
-  },
-
-  didMount() {
-    this.setCoupon();
   },
 });

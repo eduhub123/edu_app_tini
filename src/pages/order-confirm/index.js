@@ -29,6 +29,27 @@ Page({
     },
     errors: {},
     isLoading: false,
+    toast: {
+      show: false,
+      message: "",
+    },
+  },
+
+  onLoad() {
+    this.disposableCollection.push(
+      app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
+        const orderedProducts = cart.orderedProducts.filter(
+          (item) => item.choose
+        );
+        this.setData({
+          order: { ...cart, orderedProducts },
+        });
+      })
+    );
+  },
+
+  onShow() {
+    this.loadData();
   },
 
   onTapPayment() {
@@ -49,6 +70,7 @@ Page({
       errorPhone !== "pass" ||
       errorEmail !== "pass"
     ) {
+      this.onShowToast("Thông tin liên hệ chưa đầy đủ hoặc sai định dạng");
       return this.setData({
         errors: {
           ...this.data.errors,
@@ -78,9 +100,16 @@ Page({
 
       if (res.status === "success") {
         this.onPaymentTiki(res.data.id_order_tiki, res.data.total_price);
+      } else {
+        throw "";
       }
     } catch {
-      this.setData({ isLoading: false });
+      this.setData({
+        isLoading: false,
+      });
+      this.onShowToast(
+        "Tạo đơn hàng thất bại. Vui lòng liên hệ 1900636052 để được hỗ trợ"
+      );
     }
   },
 
@@ -127,20 +156,21 @@ Page({
     });
   },
 
-  onLoad() {
-    this.disposableCollection.push(
-      app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
-        const orderedProducts = cart.orderedProducts.filter(
-          (item) => item.choose
-        );
-        this.setData({
-          order: { ...cart, orderedProducts },
-        });
-      })
-    );
+  onShowToast(message) {
+    this.setData({
+      toast: {
+        show: true,
+        message: message,
+      },
+    });
   },
 
-  onShow() {
-    this.loadData();
+  onCloseToast() {
+    this.setData({
+      toast: {
+        show: false,
+        message: "",
+      },
+    });
   },
 });

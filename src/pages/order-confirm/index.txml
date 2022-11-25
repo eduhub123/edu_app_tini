@@ -9,3 +9,5 @@
     <footer-cart titleButton="Thanh toán" onTapBuyNow="onTapPayment" totalMoney="{{order.totalPayment}}" isLoading="{{isLoading}}" disabled="{{isLoading}}" coupon="{{order.coupon}}" />
   </view>
 </view>
+
+<toast-bar onClose="onCloseToast" type="error" className="text-center" show="{{toast.show}}" duration="{{5000}}" content="{{toast.message}}" animation="{{true}}" bottom="150px" />

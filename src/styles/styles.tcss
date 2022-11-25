@@ -43,6 +43,11 @@
   font-weight: 400;
   line-height: 18px;
 }
+.info-bold {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+}
 
 .italic {
   font-style: italic;
@@ -56,6 +61,9 @@
 }
 .bg-white {
   background-color: #fff;
+}
+.bg-red {
+  background-color: #ff4b4b;
 }
 
 .color-black {

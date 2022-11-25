@@ -1,4 +1,4 @@
-<view class="bg-gray">
+<view class="bg-gray wrap-order-detail">
   <view class="bg-white p-m">
     <view class="hr pb-s">
       <text class="d-block note-bold">Mã đơn hàng: ABC123</text>
@@ -11,7 +11,10 @@
   </view>
   <view class="p-m d-flex my-s bg-white">
     <text class="note-bold">Phương thức thanh toán</text>
-    <text class="flex-1 note-bold text-right ml-s">Momo</text>
+    <text class="flex-1 note-bold text-right ml-s">Thanh toán với Tiki</text>
   </view>
   <payment-detail />
+</view>
+<view class="bottom-order-detail">
+  <button-app title="Về trang chủ" onTap="tapGoToHome" />
 </view>

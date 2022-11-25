@@ -5,6 +5,7 @@ import { navigateWithParams, reLaunch } from "../../utils/navigate";
 
 Page({
   disposableCollection: [],
+
   data: {
     isLoading: true,
     isError: false,

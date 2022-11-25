@@ -4,6 +4,7 @@ Page({
   data: {
     url: "",
   },
+
   onLoad(query) {
     this.webviewContext = my.createWebViewContext("web-view1");
     const { myUrl } = queryString.parse(query);

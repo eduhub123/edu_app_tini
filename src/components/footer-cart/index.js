@@ -10,10 +10,16 @@ Component({
     coupon: { name: "", discount: 0, isValid: false },
     onTapBuyNow: () => {},
   },
+
   data: {
     showPopupDiscount: false,
     listCoupons: [],
   },
+
+  didMount() {
+    this.setCoupon();
+  },
+
   methods: {
     onTogglePopupDiscount() {
       this.setData({
@@ -29,9 +35,5 @@ Component({
       const coupon = app.cart.coupon;
       this.setData({ _coupon: coupon });
     },
-  },
-
-  didMount() {
-    this.setCoupon();
   },
 });

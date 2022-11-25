@@ -27,12 +27,47 @@ App({
     email: "",
   },
 
+  // Life cycle
+  onShow() {
+    this.loadCart();
+    this.loadUserInfo();
+  },
+
   loadCart() {
     my.getStorage({
       key: "cart",
       success: (res) => {
         const cart = res.data;
-        this.cart = { ...this.cart, ...cart };
+        this.cart = { ...this.cart, orderedProducts: cart };
+        this.calculatePrices();
+      },
+    });
+  },
+
+  loadUserInfo() {
+    my.getUserInfo({
+      success: (res) => {
+        const phone = res.phone?.replace("+84", "0");
+        this.editUserInfo({
+          customerId: res.customerId,
+          fullName: res.name,
+          phone: phone,
+          email: res.email,
+        });
+      },
+      complete: (res) => {
+        my.getStorage({
+          key: "customerId",
+          success: (_res) => {
+            if (_res.data && _res.data !== res.customerId) {
+              this.resetCart();
+            }
+          },
+        });
+        my.setStorage({
+          key: "customerId",
+          data: res.customerId,
+        });
       },
     });
   },
@@ -83,7 +118,7 @@ App({
 
     my.setStorage({
       key: "cart",
-      data: this.cart,
+      data: this.cart.orderedProducts,
     });
 
     this.cartEvent.emit(EMITTERS.CART_UPDATE, this.cart);
@@ -152,39 +187,5 @@ App({
     this.cart.orderedProducts = newData;
 
     this.calculatePrices();
-  },
-
-  // Life cycle
-  onShow() {
-    this.loadCart();
-    this.loadUserInfo();
-  },
-
-  loadUserInfo() {
-    my.getUserInfo({
-      success: (res) => {
-        const phone = res.phone?.replace("+84", "0");
-        this.editUserInfo({
-          customerId: res.customerId,
-          fullName: res.name,
-          phone: phone,
-          email: res.email,
-        });
-      },
-      complete: (res) => {
-        my.getStorage({
-          key: "customerId",
-          success: (_res) => {
-            if (_res.data && _res.data !== res.customerId) {
-              this.resetCart();
-            }
-          },
-        });
-        my.setStorage({
-          key: "customerId",
-          data: res.customerId,
-        });
-      },
-    });
   },
 });

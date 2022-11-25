@@ -19,6 +19,16 @@ Page({
     messageError: "",
   },
 
+  onReady() {
+    this.loadData();
+    setTitleNavigationBar();
+    setNavigationBar();
+  },
+
+  onShow() {
+    setNavigationBar();
+  },
+
   async loadData() {
     this.setData({
       isLoading: true,
@@ -71,20 +81,4 @@ Page({
       page: "cart",
     });
   },
-
-  onLoad(query) {},
-
-  onReady() {
-    this.loadData();
-    setTitleNavigationBar();
-    setNavigationBar();
-  },
-
-  onShow() {
-    setNavigationBar();
-  },
-
-  onHide() {},
-
-  onUnload() {},
 });

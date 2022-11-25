@@ -12,7 +12,7 @@
       <view class="text-center mb-m">
         <view>
           <text class="note d-block mb-m">Mã voucher sẽ được gửi về SĐT/Email đăng ký của bạn trong vòng 24h. Sau 24h nếu bạn chưa nhận được tài khoản, vui lòng liên hệ đến Hotline: 1900636052 để được hỗ trợ.</text>
-          <text class="info">Tham gia cộng đồng Đồng Hành Cùng Con Học Monkey để cập nhật tài liệu học tập mới nhất.</text>
+          <text class="info">Tham gia cộng đồng <text class="info-bold color-red">{{' '}}Đồng Hành Cùng Con Học Monkey {{' '}}</text> để cập nhật tài liệu học tập mới nhất.</text>
         </view>
       </view>
     </view>

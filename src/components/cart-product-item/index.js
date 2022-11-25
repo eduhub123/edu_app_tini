@@ -11,6 +11,7 @@ Component({
     onTapRemoveProduct: () => {},
     onChooseProduct: () => {},
   },
+
   methods: {
     _onChangeQuantity(quantity) {
       this.props.onChangeQuantity(this.props.index, quantity);

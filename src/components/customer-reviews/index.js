@@ -4,6 +4,7 @@ Component({
   props: {
     reviews: [],
   },
+
   methods: {
     goToReview() {
       navigateWithParams({
@@ -11,5 +12,4 @@ Component({
       });
     },
   },
-  didMount() {},
 });

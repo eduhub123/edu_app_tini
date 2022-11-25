@@ -11,6 +11,7 @@ Component({
     },
     onChangeCustomerInfo: () => {},
   },
+
   data: {
     dataForm: {
       fullName: "",
@@ -22,6 +23,10 @@ Component({
       phone: "",
       email: "",
     },
+  },
+
+  didMount() {
+    this.setData({ dataForm: this.props.customerInfo });
   },
 
   methods: {
@@ -109,9 +114,5 @@ Component({
         });
       }
     },
-  },
-
-  didMount() {
-    this.setData({ dataForm: this.props.customerInfo });
   },
 });
