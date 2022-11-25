@@ -36,3 +36,24 @@ export const getRelatedProduct = (productId) => {
       productId,
   });
 };
+
+export const postCreateOrder = ({
+  fullName = "",
+  phone = "",
+  email = "",
+  customerId = "",
+  listProduct = [],
+}) => {
+  return request({
+    url: URL_EDU,
+    path: "api/tini-app/create-order",
+    method: "POST",
+    data: {
+      name: fullName,
+      phone: phone,
+      email: email,
+      customer_id: customerId,
+      list_product: listProduct,
+    },
+  });
+};

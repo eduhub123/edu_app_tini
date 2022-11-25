@@ -1,3 +1,5 @@
+const app = getApp();
+
 Component({
   props: {
     titleButton: "",
@@ -5,10 +7,12 @@ Component({
     totalMoney: 0,
     disabled: false,
     isLoading: false,
+    coupon: { name: "", discount: 0, isValid: false },
     onTapBuyNow: () => {},
   },
   data: {
     showPopupDiscount: false,
+    listCoupons: [],
   },
   methods: {
     onTogglePopupDiscount() {
@@ -20,5 +24,14 @@ Component({
     _onTapBuyNow() {
       this.props.onTapBuyNow();
     },
+
+    setCoupon() {
+      const coupon = app.cart.coupon;
+      this.setData({ _coupon: coupon });
+    },
+  },
+
+  didMount() {
+    this.setCoupon();
   },
 });

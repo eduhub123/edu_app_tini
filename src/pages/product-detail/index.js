@@ -19,6 +19,7 @@ Page({
       packageTime: "",
       saleOff: 0,
       promotionId: "",
+      appId: "",
     },
     details: [],
     toast: {
@@ -99,6 +100,7 @@ Page({
             saleOff: detailRes.data.sale_off,
             image: detailRes.data.image,
             promotion: detailRes.data.promotion?.[0],
+            appId: detailRes.data.app_id,
           },
           banner: detailRes.data.slide,
           details: detailRes.data.detail,

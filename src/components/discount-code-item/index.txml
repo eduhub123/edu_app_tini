@@ -1,13 +1,31 @@
-<view class="d-flex discount-code-item align-items-center">
+<import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+
+<view tiki:if="{{totalMoney >= value.minMoney}}" class="d-flex discount-code-item align-items-center" onTap="_onChangeCoupon">
   <view class="mr-s">
-    <text class="code-item">TIKI01234677</text>
+    <text class="code-item">{{value.name}}</text>
   </view>
   <view class="flex-1">
-    <text class="d-block note-item">Giam 50k</text>
-    <text class="d-block note-item">Don hang tu 369k</text>
-    <text class="d-block note-item">Ap dung tat ca san pham</text>
+    <text class="d-block note-item">Giảm {{moneyFormatter(value.discount)}}</text>
+    <text class="d-block note-item">Đơn hàng từ {{moneyFormatter(value.minMoney)}}</text>
+    <text class="d-block note-item">Áp dụng tất cả sản phẩm</text>
   </view>
-  <view class="ml-xs">
-    <radio checked="true" color="#EE202E" />
+  <view class="checked-circle">
+    <icon tiki:if="{{checked}}" type="success_glyph" color="#EE202E" size="24" />
+    <view tiki:else class="circle" />
+  </view>
+</view>
+
+<view tiki:else class="d-flex discount-code-item align-items-center item-invalid" onTap="_onChangeCoupon">
+  <view class="mr-s">
+    <text class="code-item">{{value.name}}</text>
+  </view>
+  <view class="flex-1">
+    <text class="d-block note-item">Giảm {{moneyFormatter(value.discount)}}</text>
+    <text class="d-block note-item">Đơn hàng từ {{moneyFormatter(value.minMoney)}}</text>
+    <text class="d-block note-item">Áp dụng tất cả sản phẩm</text>
+  </view>
+  <view class="checked-circle">
+    <icon tiki:if="{{checked}}" type="success_glyph" color="#afafaf" size="24" />
+    <view tiki:else class="circle" />
   </view>
 </view>

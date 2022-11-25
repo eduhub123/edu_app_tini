@@ -3,7 +3,6 @@
   "usingComponents": {
     "icon-app": "components/icon-app/index",
     "button-app": "components/button-app/index",
-    "bottom-sheet": "@tiki.vn/tini-ui/es/bottom-sheet/index",
-    "discount-code-item": "components/discount-code-item/index"
+    "popup-choose-discount-code": "components/popup-choose-discount-code/index"
   }
 }

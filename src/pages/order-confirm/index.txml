@@ -6,6 +6,6 @@
     <payment-detail totalMoney="{{order.totalMoney}}" fee="{{order.shippingFee}}" discount="{{order.coupon.discount}}" totalPayment="{{order.totalPayment}}" />
   </view>
   <view class="footer-order-confirm">
-    <footer-cart titleButton="Thanh toán" onTapBuyNow="onPayment" totalMoney="{{order.totalPayment}}" isLoading="{{isLoading}}" disabled="{{isLoading}}" />
+    <footer-cart titleButton="Thanh toán" onTapBuyNow="onTapPayment" totalMoney="{{order.totalPayment}}" isLoading="{{isLoading}}" disabled="{{isLoading}}" coupon="{{order.coupon}}" />
   </view>
 </view>

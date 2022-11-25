@@ -80,7 +80,7 @@ Page({
   },
 
   onTapBuyNow() {
-    if (app.userInfo.tikiId) {
+    if (app.userInfo.customerId) {
       navigateWithParams({
         page: "order-confirm",
       });
@@ -89,7 +89,7 @@ Page({
     }
   },
 
-  async loadData() {
+  loadData() {
     const isNotChooseAll = app.cart.orderedProducts.some(
       (item) => !item.choose
     );
@@ -99,7 +99,7 @@ Page({
     });
   },
 
-  async onLoad() {
+  onLoad() {
     this.disposableCollection.push(
       app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
         const isNotChooseAll = cart.orderedProducts.some(

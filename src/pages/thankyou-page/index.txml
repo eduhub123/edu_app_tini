@@ -25,7 +25,7 @@
       </view>
       <view class="text-center mb-m">
         <view>
-          <text class="note d-block mb-m">Lỗi {Error 10x29183}, vui lòng {solution}</text>
+          <text class="note d-block mb-m">{{message}}</text>
         </view>
       </view>
     </view>

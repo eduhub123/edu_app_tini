@@ -1,0 +1,7 @@
+<bottom-sheet show="{{showPopupDiscount}}" title="Mã giảm giá" buttonCls="button-popup-discount-code" buttonTitle="Đồng ý" onClose="_onTogglePopupDiscount" onClick="_onSubmitCoupon">
+  <view class="p-m">
+    <view tiki:for="{{listCoupons}}" tiki:for-index="index" tiki:for-item="coupon">
+      <discount-code-item checked="{{coupon.name === _coupon.name}}" value="{{coupon}}" totalMoney="{{totalMoney}}" onChangeCoupon="onChangeCoupon" />
+    </view>
+  </view>
+</bottom-sheet>

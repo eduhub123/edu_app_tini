@@ -15,3 +15,21 @@
   box-shadow: 2px 6px 10px 0px rgba(204, 204, 204, 1);
   margin-bottom: 16px;
 }
+
+.circle {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 90px;
+}
+
+.checked-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-invalid {
+  color: #afafaf;
+  border: none;
+}

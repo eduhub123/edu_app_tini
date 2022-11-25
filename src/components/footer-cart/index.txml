@@ -1,23 +1,14 @@
 <import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
 
 <view class="hr-top footer-cart-wrap">
-  <bottom-sheet show="{{showPopupDiscount}}" title="Mã giảm giá" buttonCls="button-popup-discount-code" buttonTitle="Đồng ý" onClose="onTogglePopupDiscount">
-    <view class="p-m">
-      <discount-code-item />
-      <discount-code-item />
-      <discount-code-item />
-      <discount-code-item />
-      <discount-code-item />
-      <discount-code-item />
-    </view>
-  </bottom-sheet>
   <view class="d-flex p-m hr" onTap="onTogglePopupDiscount">
     <view class="d-flex align-items-center flex-1">
       <icon-app type="discount" size="24" />
       <text class="note-bold ml-s">Mã giảm giá</text>
     </view>
     <view class="d-flex align-items-center">
-      <text class="note">Thêm</text>
+      <text tiki:if="{{!coupon.name}}" class="note">Thêm</text>
+      <text tiki:else class="note">{{coupon.name}}</text>
       <icon type="arrow_right" />
     </view>
   </view>
@@ -29,3 +20,5 @@
     <button-app disabled="{{disabled}}" isLoading="{{isLoading}}" title="{{titleButton}} {{totalQuantity ? '('+totalQuantity+')' : ''}}" onTap="_onTapBuyNow" />
   </view>
 </view>
+
+<popup-choose-discount-code showPopupDiscount="{{showPopupDiscount}}" coupon="{{coupon}}" totalMoney="{{totalMoney}}" onTogglePopupDiscount="onTogglePopupDiscount" />

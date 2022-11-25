@@ -14,7 +14,7 @@
     <text class="info italic color-gray">Chưa có sản phẩm nào trong giỏ hàng.\nVui lòng chọn sản phẩm muốn mua để tiếp tục!</text>
   </view>
   <view class="cart-footer">
-    <footer-cart disabled="{{cart.totalQuantityChoose <= 0}}" titleButton="Mua ngay" totalMoney="{{cart.totalPayment}}" totalQuantity="{{cart.totalQuantityChoose}}" onTapBuyNow="onTapBuyNow" />
+    <footer-cart disabled="{{cart.totalQuantityChoose <= 0}}" titleButton="Mua ngay" totalMoney="{{cart.totalPayment}}" totalQuantity="{{cart.totalQuantityChoose}}" onTapBuyNow="onTapBuyNow" coupon="{{cart.coupon}}" />
   </view>
 </view>
 

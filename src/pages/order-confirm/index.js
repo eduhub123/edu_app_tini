@@ -1,9 +1,13 @@
 import { navigateWithParams } from "../../utils/navigate";
 import { checkName, checkPhone, checkEmail } from "../../utils/validate";
+import { EMITTERS } from "../../constants/app";
+import { postCreateOrder } from "../../services/index";
 
 const app = getApp();
 
 Page({
+  disposableCollection: [],
+
   data: {
     order: {
       orderedProducts: [],
@@ -27,8 +31,7 @@ Page({
     isLoading: false,
   },
 
-  onPayment() {
-    this.setData({ isLoading: true });
+  onTapPayment() {
     if (this.data.order.totalQuantityChoose <= 0) {
       return this.setData({
         errors: {
@@ -53,41 +56,54 @@ Page({
         },
       });
     }
+    this.createOrder();
+  },
 
+  async createOrder() {
+    this.setData({ isLoading: true });
+    try {
+      const listProduct = this.data.order.orderedProducts.map((product) => ({
+        product_id: product.id,
+        quantity: product.quantity,
+        app_id: product.appId,
+        promotion_id: product.promotion?.promotion_id ?? "",
+      }));
+
+      const payload = {
+        ...this.data.userInfo,
+        listProduct,
+      };
+
+      const res = await postCreateOrder(payload);
+
+      if (res.status === "success") {
+        this.onPaymentTiki(res.data.id_order_tiki, res.data.total_price);
+      }
+    } catch {
+      this.setData({ isLoading: false });
+    }
+  },
+
+  onPaymentTiki(orderTikiId, totalPayment) {
     my.makePayment({
-      orderId: "1",
+      orderId: orderTikiId,
       success: () => {
-        console.log("s");
-        navigateWithParams({
-          page: "thankyou-page",
-          params: {
-            status: "success",
-            orderId: "ABC1511",
-            paymentMethod: "Thẻ Visa",
-            totalPayment: 16000000,
-            message: "",
-          },
-        });
-
         app.clearCart();
       },
-      fail: () => {
-        console.log("e");
-        navigateWithParams({
-          page: "thankyou-page",
-          params: {
-            status: "error",
-            orderId: "ABC1511",
-            paymentMethod: "Thẻ Visa",
-            totalPayment: 16000000,
-            message: "",
-          },
-        });
-      },
-      complete: () => {
+      complete: (res) => {
         this.setData({
           errors: {},
           isLoading: false,
+        });
+        navigateWithParams({
+          page: "thankyou-page",
+          params: {
+            status: res === "success" ? "success" : "error",
+            orderId: orderTikiId,
+            paymentMethod: "Thanh toán với Tiki",
+            totalPayment: totalPayment,
+            message: res.errorMessage ?? "",
+          },
         });
       },
     });
@@ -95,12 +111,12 @@ Page({
 
   onChangeCustomerInfo({ fullName, phone, email }) {
     this.setData({
-      userInfo: { fullName, phone, email },
+      userInfo: { ...this.data.userInfo, fullName, phone, email },
       errors: { userInfo: "" },
     });
   },
 
-  async loadData() {
+  loadData() {
     const orderedProducts = app.cart.orderedProducts.filter(
       (item) => item.choose
     );
@@ -112,6 +128,19 @@ Page({
   },
 
   onLoad() {
+    this.disposableCollection.push(
+      app.cartEvent.on(EMITTERS.CART_UPDATE, (cart) => {
+        const orderedProducts = cart.orderedProducts.filter(
+          (item) => item.choose
+        );
+        this.setData({
+          order: { ...cart, orderedProducts },
+        });
+      })
+    );
+  },
+
+  onShow() {
     this.loadData();
   },
 });

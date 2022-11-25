@@ -15,12 +15,13 @@ App({
     coupon: {
       name: "",
       discount: 0,
+      minMoney: 0,
       isValid: false,
     },
   },
 
   userInfo: {
-    tikiId: "",
+    customerId: "",
     fullName: "",
     phone: "",
     email: "",
@@ -36,8 +37,8 @@ App({
     });
   },
 
-  editUserInfo({ tikiId, fullName, phone, email }) {
-    this.userInfo = { tikiId, fullName, phone, email };
+  editUserInfo({ customerId, fullName, phone, email }) {
+    this.userInfo = { customerId, fullName, phone, email };
   },
 
   addProduct(product) {
@@ -110,13 +111,10 @@ App({
     this.calculatePrices();
   },
 
-  async selectCoupon(code) {
-    try {
-      const coupon = await getCouponFromCodeAPI(code);
-      this.cart.coupon = coupon;
+  selectCoupon(coupon) {
+    this.cart.coupon = coupon;
 
-      this.calculatePrices();
-    } catch {}
+    this.calculatePrices();
   },
 
   removeCoupon() {
@@ -163,14 +161,11 @@ App({
   },
 
   loadUserInfo() {
-    my.getAuthCode({
-      success: (res) => console.log(res),
-    });
     my.getUserInfo({
       success: (res) => {
         const phone = res.phone?.replace("+84", "0");
         this.editUserInfo({
-          tikiId: res.customerId,
+          customerId: res.customerId,
           fullName: res.name,
           phone: phone,
           email: res.email,
