@@ -32,7 +32,7 @@ App({
       key: "cart",
       success: (res) => {
         const cart = res.data;
-        this.cart = { ...this.cart, orderedProducts: cart };
+        this.cart = { ...this.cart, orderedProducts: cart ?? [] };
         this.calculatePrices();
       },
     });
@@ -74,11 +74,13 @@ App({
     const position = this.cart.orderedProducts.findIndex(
       (item) => item.id === product.id
     );
+
     if (position !== -1) {
       this.cart.orderedProducts[position].quantity += 1;
       this.cart.orderedProducts[position].choose = true;
-    } else
+    } else {
       this.cart.orderedProducts.push({ ...product, quantity: 1, choose: true });
+    }
 
     this.calculatePrices();
   },
