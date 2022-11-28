@@ -3,6 +3,8 @@ import { setNavigationBar, setTitleNavigationBar } from "../../utils/common";
 import { getDetailByProductId, getRelatedProduct } from "../../services";
 import { navigateWithParams, reLaunch } from "../../utils/navigate";
 
+const app = getApp();
+
 Page({
   disposableCollection: [],
 
@@ -40,14 +42,14 @@ Page({
   },
 
   onAddToCart() {
-    getApp().addProduct(this.data.product);
+    app.addProduct(this.data.product);
     setNavigationBar();
     this.showToast("Thêm vào giỏ hàng thành công!");
   },
 
   onBuyNow() {
-    getApp().chooseAllProduct(false);
-    getApp().addProduct(this.data.product);
+    app.chooseAllProduct(false);
+    app.addProduct(this.data.product);
     navigateWithParams({
       page: "cart",
     });

@@ -10,4 +10,6 @@
   </view>
 </view>
 
-<toast-bar onClose="onCloseToast" type="error" className="text-center" show="{{toast.show}}" duration="{{5000}}" content="{{toast.message}}" animation="{{true}}" bottom="150px" />
+<toast-bar onClose="onCloseToast" type="error" iconLeft="close_circle" style="background-color: #ff4b4b" className="text-center" show="{{toast.show}}" duration="{{5000}}" content="{{toast.message}}" animation="{{true}}" bottom="150px" />
+
+<loading tiki:if="{{isCheckPayment}}" message="Đang kiểm tra đơn hàng. Vui lòng chờ trong giây lát" />

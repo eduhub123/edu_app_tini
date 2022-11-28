@@ -1,1 +1,5 @@
-Component({});
+Component({
+  props: {
+    message: "",
+  },
+});

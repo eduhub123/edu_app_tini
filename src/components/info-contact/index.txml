@@ -2,7 +2,7 @@
   <view class="d-flex justify-space mb-xs">
     <text class="title">Thông tin liên hệ</text>
     <view class="d-flex align-items-center button-change" onTap="onShowPopupEdit">
-      <icon type="plus" color="#3636ee" />
+      <icon type="plus" color="#3636ee" size="14" />
       <text>
         Thay đổi
       </text>

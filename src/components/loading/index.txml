@@ -22,4 +22,7 @@
       G
     </view>
   </view>
+  <view tiki:if="{{message}}">
+    <text class="info italic">{{message}}</text>
+  </view>
 </view>

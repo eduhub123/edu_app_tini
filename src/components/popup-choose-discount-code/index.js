@@ -46,6 +46,9 @@ Component({
   methods: {
     _onTogglePopupDiscount() {
       this.props.onTogglePopupDiscount();
+      this.setData({
+        _coupon: this.props.coupon,
+      });
     },
 
     onChangeCoupon(coupon) {
@@ -58,7 +61,7 @@ Component({
 
     _onSubmitCoupon() {
       app.selectCoupon(this.data._coupon);
-      this._onTogglePopupDiscount();
+      this.props.onTogglePopupDiscount();
     },
 
     setCoupon() {

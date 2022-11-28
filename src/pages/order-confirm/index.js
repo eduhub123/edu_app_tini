@@ -1,7 +1,7 @@
 import { navigateWithParams } from "../../utils/navigate";
 import { checkName, checkPhone, checkEmail } from "../../utils/validate";
 import { EMITTERS } from "../../constants/app";
-import { postCreateOrder } from "../../services/index";
+import { postCreateOrder, getDetailOrder } from "../../services/index";
 
 const app = getApp();
 
@@ -29,6 +29,7 @@ Page({
     },
     errors: {},
     isLoading: false,
+    isCheckPayment: false,
     toast: {
       show: false,
       message: "",
@@ -99,9 +100,16 @@ Page({
       const res = await postCreateOrder(payload);
 
       if (res.status === "success") {
-        this.onPaymentTiki(res.data.id_order_tiki, res.data.total_price);
+        this.onPaymentTiki(
+          res.data.id_order_tiki,
+          res.data.order_id,
+          res.data.total_price
+        );
       } else {
-        throw "";
+        this.setData({
+          isLoading: false,
+        });
+        this.onShowToast("Lỗi: " + res.message);
       }
     } catch {
       this.setData({
@@ -113,26 +121,70 @@ Page({
     }
   },
 
-  onPaymentTiki(orderTikiId, totalPayment) {
+  onPaymentTiki(orderTikiId, orderMonkeyId, totalPayment) {
     my.makePayment({
       orderId: orderTikiId,
-      success: () => {
+      success: async () => {
+        try {
+          this.setData({
+            isCheckPayment: true,
+          });
+          my.hideBackHome({ hide: true });
+          const resDetail = await getDetailOrder(orderMonkeyId);
+          if (resDetail.status === "success") {
+            if (resDetail.data.status === "online_paid") {
+              navigateWithParams({
+                page: "thankyou-page",
+                params: {
+                  status: "success",
+                  orderId: resDetail.data.tiki_order_id,
+                  paymentMethod: "Thanh toán với Tiki",
+                  totalMoney: resDetail.data.total_money,
+                  totalPayment: resDetail.data.total_payment,
+                  fee: resDetail.data.fee,
+                  message: "",
+                  time: resDetail.data.created_time,
+                  products: JSON.stringify(resDetail.data.product),
+                },
+              });
+            } else {
+              navigateWithParams({
+                page: "thankyou-page",
+                params: {
+                  status: "error",
+                  orderId: orderTikiId,
+                  paymentMethod: "Thanh toán với Tiki",
+                  totalPayment: totalPayment,
+                  message: "",
+                },
+              });
+            }
+          }
+        } catch {
+        } finally {
+          this.setData({
+            isCheckPayment: false,
+          });
+          my.hideBackHome({ hide: false });
+        }
         app.clearCart();
       },
-      complete: (res) => {
-        this.setData({
-          errors: {},
-          isLoading: false,
-        });
+      fail: (res) => {
         navigateWithParams({
           page: "thankyou-page",
           params: {
-            status: res === "success" ? "success" : "error",
+            status: "error",
             orderId: orderTikiId,
             paymentMethod: "Thanh toán với Tiki",
             totalPayment: totalPayment,
             message: res.errorMessage ?? "",
           },
+        });
+      },
+      complete: (res) => {
+        this.setData({
+          errors: {},
+          isLoading: false,
         });
       },
     });

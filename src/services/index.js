@@ -57,3 +57,10 @@ export const postCreateOrder = ({
     },
   });
 };
+
+export const getDetailOrder = (orderId) => {
+  return request({
+    url: URL_EDU,
+    path: "api/tini-app/get-detail-order-by-order-id" + "?order_id=" + orderId,
+  });
+};

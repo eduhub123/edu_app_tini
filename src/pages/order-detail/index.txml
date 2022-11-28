@@ -1,19 +1,21 @@
+<import-sjs from="../../utils/common.sjs" name="{formatTime}"></import-sjs>
+
 <view class="bg-gray wrap-order-detail">
   <view class="bg-white p-m">
     <view class="hr pb-s">
-      <text class="d-block note-bold">Mã đơn hàng: ABC123</text>
-      <text class="d-block note">Ngày đặt hàng: ABC123</text>
-      <text class="d-block note italic">Thành công</text>
+      <text class="d-block note-bold">Mã đơn hàng: {{orderId}}</text>
+      <text class="d-block note">Ngày đặt hàng: {{formatTime(time)}}</text>
+      <text class="d-block note italic color-gray">{{status}}</text>
     </view>
     <view class="py-m">
-      <list-product title="Danh sách sản phẩm" />
+      <list-product title="Danh sách sản phẩm" listProduct="{{products}}" />
     </view>
   </view>
   <view class="p-m d-flex my-s bg-white">
     <text class="note-bold">Phương thức thanh toán</text>
-    <text class="flex-1 note-bold text-right ml-s">Thanh toán với Tiki</text>
+    <text class="flex-1 note-bold text-right ml-s">{{paymentMethod}}</text>
   </view>
-  <payment-detail />
+  <payment-detail totalMoney="{{totalMoney}}" fee="{{fee}}" discount="0" totalPayment="{{totalPayment}}" />
 </view>
 <view class="bottom-order-detail">
   <button-app title="Về trang chủ" onTap="tapGoToHome" />

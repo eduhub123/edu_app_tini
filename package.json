@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "tiki": {
     "appIdentifier": "earlystart.mini.app.tini",
-    "buildNumber": 12,
+    "buildNumber": 13,
     "metadata": {
       "permissions": [
         "getUserPhoneAndEmail"
@@ -14,6 +14,7 @@
     "@tiki.vn/mini-html-parser2": "^0.0.4",
     "@tiki.vn/tini-style": "^0.16.0",
     "@tiki.vn/tini-ui": "^0.16.0",
+    "dayjs": "^1.11.6",
     "query-string": "^7.1.1"
   }
 }

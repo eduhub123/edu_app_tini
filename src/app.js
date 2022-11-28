@@ -27,12 +27,6 @@ App({
     email: "",
   },
 
-  // Life cycle
-  onShow() {
-    this.loadCart();
-    this.loadUserInfo();
-  },
-
   loadCart() {
     my.getStorage({
       key: "cart",
@@ -187,5 +181,11 @@ App({
     this.cart.orderedProducts = newData;
 
     this.calculatePrices();
+  },
+
+  // Life cycle
+  onShow() {
+    this.loadCart();
+    this.loadUserInfo();
   },
 });

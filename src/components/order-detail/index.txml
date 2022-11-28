@@ -6,9 +6,12 @@
     <image src="{{product.image}}" class="image-product" />
     <view class="flex-1">
       <text class="note">{{product.nameProduct}}</text>
-      <view class="note-bold d-flex justify-space">
+      <view tiki:if="{{product.price}}" class="note-bold d-flex justify-space">
         <text>{{product.quantity}} x</text>
         <text>{{moneyFormatter(product.price)}}</text>
+      </view>
+      <view tiki:else>
+        <text class="color-gray">Số lượng: {{product.quantity}}</text>
       </view>
     </view>
   </view>
