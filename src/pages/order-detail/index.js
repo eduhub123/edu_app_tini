@@ -28,6 +28,7 @@ Page({
 
     const produtsParse = JSON.parse(products);
     const listProduct = Object.values(produtsParse).map((product) => ({
+      appId: product.app_id,
       image: product.image,
       nameProduct: product.product_name,
       quantity: product.quantity,

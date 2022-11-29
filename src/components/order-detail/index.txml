@@ -2,7 +2,7 @@
 
 <view class="bg-white {{className}}">
   <text class="title">{{title}}</text>
-  <view tiki:for="{{listProduct}}" tiki:key="index" tiki:for-item="product" class="d-flex hr py-s">
+  <view tiki:for="{{products}}" tiki:key="index" tiki:for-item="product" class="d-flex hr py-s">
     <image src="{{product.image}}" class="image-product" />
     <view class="flex-1">
       <text class="note">{{product.nameProduct}}</text>

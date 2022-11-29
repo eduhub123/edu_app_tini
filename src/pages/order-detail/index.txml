@@ -8,7 +8,7 @@
       <text class="d-block note italic color-gray">{{status}}</text>
     </view>
     <view class="py-m">
-      <list-product title="Danh sách sản phẩm" listProduct="{{products}}" />
+      <order-detail title="Danh sách sản phẩm" listProduct="{{products}}" />
     </view>
   </view>
   <view class="p-m d-flex my-s bg-white">

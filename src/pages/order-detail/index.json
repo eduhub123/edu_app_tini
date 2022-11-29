@@ -2,7 +2,7 @@
   "defaultTitle": "Đơn hàng",
   "showAddToDeviceButton": "NO",
   "usingComponents": {
-    "list-product": "components/order-detail/index",
+    "order-detail": "components/order-detail/index",
     "payment-detail": "components/payment-detail/index",
     "button-app": "components/button-app/index"
   }
