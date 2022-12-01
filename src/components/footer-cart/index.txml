@@ -1,14 +1,13 @@
 <import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
 
 <view class="hr-top footer-cart-wrap">
-  <view class="d-flex p-m hr" onTap="onTogglePopupDiscount">
+  <view tiki:if="{{!hideCoupon}}" class="d-flex p-m hr" onTap="onTogglePopupDiscount">
     <view class="d-flex align-items-center flex-1">
       <icon-app type="discount" size="24" />
       <text class="note-bold ml-s">Mã giảm giá</text>
     </view>
     <view class="d-flex align-items-center">
-      <text tiki:if="{{!coupon.name}}" class="note">Thêm</text>
-      <text tiki:else class="note">{{coupon.name}}</text>
+      <text class="note">Thêm</text>
       <icon type="arrow_right" />
     </view>
   </view>
@@ -21,4 +20,4 @@
   </view>
 </view>
 
-<popup-choose-discount-code showPopupDiscount="{{showPopupDiscount}}" coupon="{{coupon}}" totalMoney="{{totalMoney}}" onTogglePopupDiscount="onTogglePopupDiscount" />
+<popup-choose-discount-code listChooseProduct="{{listChooseProduct}}" showPopupDiscount="{{showPopupDiscount}}" coupon="{{coupon}}" totalMoney="{{totalMoney}}" onTogglePopupDiscount="onTogglePopupDiscount" />

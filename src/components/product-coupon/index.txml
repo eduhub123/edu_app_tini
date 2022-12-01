@@ -1,0 +1,7 @@
+<view style="display: flex; align-items: center; margin-bottom: 12px; margin-left: 8px;">
+  <image src="{{product.image}}" style="width: 30px; height: 30px; border-radius: 10px;" />
+  <text class="note-medium ml-s flex-1">{{product.nameProduct}}</text>
+</view>
+<view tiki:for="{{product.listCoupon}}" tiki:for-index="index" tiki:for-item="coupon">
+  <discount-code-item checked="{{coupon.group_voucher_id === product.coupon.group_voucher_id}}" value="{{coupon}}" totalMoney="{{totalMoney}}" onChangeCoupon="onChangeCoupon" />
+</view>

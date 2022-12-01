@@ -1,5 +1,5 @@
 import request from "./request";
-import { URL_EDU } from "./url";
+import { URL_EDU, URL_CRM } from "./url";
 
 export const getBannersAPI = () => {
   return request({ url: URL_EDU, path: "api/tini-app/homepage-slide" });
@@ -62,5 +62,12 @@ export const getDetailOrder = (orderId) => {
   return request({
     url: URL_EDU,
     path: "api/tini-app/get-detail-order-by-order-id" + "?order_id=" + orderId,
+  });
+};
+
+export const getCouponTiki = () => {
+  return request({
+    url: URL_CRM,
+    path: "api/get-voucher-tiki",
   });
 };

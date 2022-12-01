@@ -14,11 +14,6 @@ Page({
       totalPayment: 0,
       totalQuantity: 0,
       totalQuantityChoose: 0,
-      coupon: {
-        name: "",
-        discount: 0,
-        isValid: false,
-      },
     },
     modal: {
       key: "",
@@ -31,6 +26,7 @@ Page({
     selectedIndex: "",
     isChooseAllProduct: false,
     userInfo: {},
+    listChooseProduct: [],
   },
 
   onLoad() {
@@ -39,9 +35,13 @@ Page({
         const isNotChooseAll = cart.orderedProducts.some(
           (item) => !item.choose
         );
+        const listChooseProduct = cart.orderedProducts.filter(
+          (item) => item.choose
+        );
         this.setData({
           cart,
           isChooseAllProduct: !isNotChooseAll,
+          listChooseProduct,
         });
       })
     );
@@ -111,9 +111,13 @@ Page({
     const isNotChooseAll = app.cart.orderedProducts.some(
       (item) => !item.choose
     );
+    const listChooseProduct = app.cart.orderedProducts.filter(
+      (item) => item.choose
+    );
     this.setData({
       cart: app.cart,
       isChooseAllProduct: !isNotChooseAll,
+      listChooseProduct,
     });
   },
 });

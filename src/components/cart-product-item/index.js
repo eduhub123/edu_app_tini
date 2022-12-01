@@ -7,6 +7,7 @@ Component({
     price: 0,
     quantity: 1,
     checked: false,
+    coupon: {},
     onChangeQuantity: () => {},
     onTapRemoveProduct: () => {},
     onChooseProduct: () => {},

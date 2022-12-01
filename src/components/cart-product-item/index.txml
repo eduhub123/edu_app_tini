@@ -9,6 +9,14 @@
     <view class="flex-1">
       <text class="d-block note-medium">{{name}}</text>
       <text class="d-block note-bold">{{moneyFormatter(price)}}</text>
+      <view tiki:if="{{coupon.discount_money || coupon.discount_percent}}" class="coupon-wrap">
+        <view class="coupon">
+          <icon-app type="discount" size="18" />
+          <text tiki:if="{{coupon.discount_money}}" class="info color-red ml-xxs">Giảm giá {{moneyFormatter(coupon.discount_money)}}</text>
+          <text tiki:else class="info color-red ml-xxs">Giảm giá {{coupon.discount_money}}%</text>
+        </view>
+      </view>
+      <text tiki:if="{{coupon.isNotValid}}" class="info color-red italic">Mã giảm giá không còn hợp lệ</text>
       <view class="mt-s">
         <quantity-input value="{{quantity}}" onChange="_onChangeQuantity" />
       </view>

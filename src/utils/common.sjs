@@ -9,3 +9,8 @@ export const formatTime = (timeStamp) => {
   const time = dayjs.unix(timeStamp).format("HH:mm, DD/MM/YYYY");
   return time;
 };
+
+export const formatDate = (timeStamp) => {
+  const date = dayjs.unix(timeStamp).format("DD/MM/YYYY");
+  return date;
+};

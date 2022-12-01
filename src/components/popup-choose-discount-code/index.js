@@ -4,43 +4,25 @@ Component({
   props: {
     showPopupDiscount: false,
     totalMoney: 0,
-    coupon: { name: "", discount: 0, isValid: false },
     onTogglePopupDiscount: () => {},
     onSubmitCoupon: () => {},
-    listCoupons: [
-      {
-        name: "ABCXYZ123",
-        discount: 10000,
-        minMoney: 300000,
-        isValid: true,
-      },
-      {
-        name: "AAABBBCCC",
-        discount: 20000,
-        minMoney: 400000,
-        isValid: false,
-      },
-      {
-        name: "BBBAAACCC",
-        discount: 30000,
-        minMoney: 1000000,
-        isValid: true,
-      },
-      {
-        name: "CCCAAABBB",
-        discount: 40000,
-        minMoney: 2000000,
-        isValid: false,
-      },
-    ],
+    listChooseProduct: [],
   },
 
   data: {
-    _coupon: { name: "", discount: 0, isValid: false },
+    isEmpty: false,
   },
 
-  didMount() {
-    this.setCoupon();
+  deriveDataFromProps() {
+    let isEmpty = true;
+    this.props.listChooseProduct.forEach((item) => {
+      if (item.listCoupon?.length > 0) {
+        isEmpty = false;
+      }
+    });
+    this.setData({
+      isEmpty: isEmpty,
+    });
   },
 
   methods: {
@@ -49,23 +31,6 @@ Component({
       this.setData({
         _coupon: this.props.coupon,
       });
-    },
-
-    onChangeCoupon(coupon) {
-      if (coupon.name !== this.data._coupon.name) {
-        this.setData({ _coupon: coupon });
-      } else {
-        this.setData({ _coupon: { name: "", discount: 0, isValid: false } });
-      }
-    },
-
-    _onSubmitCoupon() {
-      app.selectCoupon(this.data._coupon);
-      this.props.onTogglePopupDiscount();
-    },
-
-    setCoupon() {
-      this.setData({ _coupon: this.props.coupon });
     },
   },
 });

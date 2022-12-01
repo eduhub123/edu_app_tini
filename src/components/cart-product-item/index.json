@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "quantity-input": "components/quantity-input/index"
+    "quantity-input": "components/quantity-input/index",
+    "icon-app": "components/icon-app/index"
   }
 }

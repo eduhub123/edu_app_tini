@@ -9,15 +9,13 @@ Component({
     isLoading: false,
     coupon: { name: "", discount: 0, isValid: false },
     onTapBuyNow: () => {},
+    listChooseProduct: [],
+    hideCoupon: false,
   },
 
   data: {
     showPopupDiscount: false,
     listCoupons: [],
-  },
-
-  didMount() {
-    this.setCoupon();
   },
 
   methods: {
@@ -29,11 +27,6 @@ Component({
 
     _onTapBuyNow() {
       this.props.onTapBuyNow();
-    },
-
-    setCoupon() {
-      const coupon = app.cart.coupon;
-      this.setData({ _coupon: coupon });
     },
   },
 });

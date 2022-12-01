@@ -16,11 +16,7 @@ Page({
       totalPayment: 0,
       totalQuantity: 0,
       totalQuantityChoose: 0,
-      coupon: {
-        name: "",
-        discount: 0,
-        isValid: false,
-      },
+      totalDiscount: 0,
     },
     userInfo: {
       fullName: "",
@@ -90,6 +86,10 @@ Page({
         quantity: product.quantity,
         app_id: product.appId,
         promotion_id: product.promotion?.promotion_id ?? "",
+        group_voucher_id:
+          product.coupon?.group_voucher_id && !product.coupon?.isNotValid
+            ? product.coupon?.group_voucher_id
+            : "",
       }));
 
       const payload = {
@@ -110,6 +110,7 @@ Page({
           isLoading: false,
         });
         this.onShowToast("Lỗi: " + res.message);
+        app.loadCoupon();
       }
     } catch {
       this.setData({

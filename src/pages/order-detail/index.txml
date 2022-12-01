@@ -15,7 +15,7 @@
     <text class="note-bold">Phương thức thanh toán</text>
     <text class="flex-1 note-bold text-right ml-s">{{paymentMethod}}</text>
   </view>
-  <payment-detail totalMoney="{{totalMoney}}" fee="{{fee}}" discount="0" totalPayment="{{totalPayment}}" />
+  <payment-detail totalMoney="{{totalMoney}}" fee="{{fee}}" discount="{{totalMoney-totalPayment}}" totalPayment="{{totalPayment}}" />
 </view>
 <view class="bottom-order-detail">
   <button-app title="Về trang chủ" onTap="tapGoToHome" />

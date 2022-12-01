@@ -2,6 +2,6 @@
   "component": true,
   "usingComponents": {
     "bottom-sheet": "@tiki.vn/tini-ui/es/bottom-sheet/index",
-    "discount-code-item": "components/discount-code-item/index"
+    "product-coupon": "components/product-coupon/index"
   }
 }

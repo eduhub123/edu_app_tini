@@ -1,31 +1,17 @@
 <import-sjs from="../../utils/common.sjs" name="{moneyFormatter}"></import-sjs>
+<import-sjs from="../../utils/common.sjs" name="{formatDate}"></import-sjs>
 
-<view tiki:if="{{totalMoney >= value.minMoney}}" class="d-flex discount-code-item align-items-center" onTap="_onChangeCoupon">
+<view class="d-flex discount-code-item align-items-center" onTap="_onChangeCoupon">
   <view class="mr-s">
-    <text class="code-item">{{value.name}}</text>
+    <!-- <text class="code-item">{{value.name}}</text> -->
   </view>
   <view class="flex-1">
-    <text class="d-block note-item">Giảm {{moneyFormatter(value.discount)}}</text>
-    <text class="d-block note-item">Đơn hàng từ {{moneyFormatter(value.minMoney)}}</text>
-    <text class="d-block note-item">Áp dụng tất cả sản phẩm</text>
+    <text tiki:if="{{value.discount_money}}" class="d-block note-item">Giảm {{moneyFormatter(value.discount_money)}}</text>
+    <text tiki:else class="d-block note-item">Giảm {{value.discount_percent}}%</text>
+    <text class="d-block note-item">Hạn sử dụng: {{formatDate(value.time_end)}}</text>
   </view>
   <view class="checked-circle">
     <icon tiki:if="{{checked}}" type="success_glyph" color="#EE202E" size="24" />
-    <view tiki:else class="circle" />
-  </view>
-</view>
-
-<view tiki:else class="d-flex discount-code-item align-items-center item-invalid" onTap="_onChangeCoupon">
-  <view class="mr-s">
-    <text class="code-item">{{value.name}}</text>
-  </view>
-  <view class="flex-1">
-    <text class="d-block note-item">Giảm {{moneyFormatter(value.discount)}}</text>
-    <text class="d-block note-item">Đơn hàng từ {{moneyFormatter(value.minMoney)}}</text>
-    <text class="d-block note-item">Áp dụng tất cả sản phẩm</text>
-  </view>
-  <view class="checked-circle">
-    <icon tiki:if="{{checked}}" type="success_glyph" color="#afafaf" size="24" />
     <view tiki:else class="circle" />
   </view>
 </view>

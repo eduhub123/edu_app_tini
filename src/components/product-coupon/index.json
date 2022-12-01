@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "discount-code-item": "components/discount-code-item/index"
+  }
+}
