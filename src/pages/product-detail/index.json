@@ -10,7 +10,7 @@
     "button-app": "components/button-app/index",
     "loading": "components/loading/index",
     "error": "components/error/index",
-    "banners": "components/banners/index",
+    "banner-product-detail": "components/banner-product-detail/index",
     "toast": "components/toast/index"
   }
 }

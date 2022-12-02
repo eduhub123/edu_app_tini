@@ -12,7 +12,7 @@
   <view class="info header-page">
     <text number-of-lines="1"><text onTap="onTapHome">Trang chủ</text> / {{product.nameProduct}}</text>
   </view>
-  <banners banners="{{banner}}" isLoading="{{isLoading}}" />
+  <banner-product-detail banners="{{banner}}" isLoading="{{isLoading}}" />
   <view class="p-m color-black" style="padding-bottom: 90px;">
     <view>
       <text class="info color-black">{{product.nameProduct}}</text>

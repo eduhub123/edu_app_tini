@@ -3,7 +3,7 @@
 }
 
 .banners .t-carousel-container .t-carousel-slides .t-carousel-item {
-  height: calc(100vw / 3);
+  height: calc(100vw / 2);
   min-width: 100%;
   max-width: 100%;
   padding-left: 8px;
