@@ -4,7 +4,7 @@
   <view class="body-thankyou">
     <view tiki:if="{{status === 'success'}}">
       <view class="d-flex justify-center">
-        <image src="/public/assets/icons/payment_success.svg" />
+        <image class="icon-success" src="/public/assets/icons/success.png" />
       </view>
       <view class="text-center title mb-s">
         <text class="color-success">Thanh toán thành công!</text>

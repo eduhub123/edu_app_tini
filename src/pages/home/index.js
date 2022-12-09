@@ -23,6 +23,7 @@ Page({
     this.loadData();
     setTitleNavigationBar();
     setNavigationBar();
+    my.hideBackHome({ hide: true });
   },
 
   onShow() {

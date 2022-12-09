@@ -1,3 +1,8 @@
 .body-thankyou {
   margin-bottom: 100px;
 }
+
+.icon-success {
+  width: 200px;
+  height: 200px;
+}

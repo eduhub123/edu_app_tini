@@ -12,7 +12,7 @@
   </view>
   <view class="d-flex hr py-xs">
     <text class="note">Giảm giá</text>
-    <text class="flex-1 note text-right ml-xs color-success">{{moneyFormatter(discount)}}</text>
+    <text class="flex-1 note text-right ml-xs color-success">-{{moneyFormatter(discount)}}</text>
   </view>
   <view class="d-flex py-xs">
     <text class="note-bold">Tổng thanh toán</text>
