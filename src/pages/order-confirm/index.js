@@ -126,48 +126,17 @@ Page({
     my.makePayment({
       orderId: orderTikiId,
       success: async () => {
-        try {
-          this.setData({
-            isCheckPayment: true,
-          });
-          my.hideBackHome({ hide: true });
-          const resDetail = await getDetailOrder(orderMonkeyId);
-          if (resDetail.status === "success") {
-            if (resDetail.data.status === "online_paid") {
-              navigateWithParams({
-                page: "thankyou-page",
-                params: {
-                  status: "success",
-                  orderId: resDetail.data.tiki_order_id,
-                  paymentMethod: "Thanh toán với Tiki",
-                  totalMoney: resDetail.data.total_money,
-                  totalPayment: resDetail.data.total_payment,
-                  fee: resDetail.data.fee,
-                  message: "",
-                  time: resDetail.data.created_time,
-                  products: JSON.stringify(resDetail.data.product),
-                },
-              });
-            } else {
-              navigateWithParams({
-                page: "thankyou-page",
-                params: {
-                  status: "error",
-                  orderId: orderTikiId,
-                  paymentMethod: "Thanh toán với Tiki",
-                  totalPayment: totalPayment,
-                  message: "",
-                },
-              });
-            }
-          }
-        } catch {
-        } finally {
-          this.setData({
-            isCheckPayment: false,
-          });
-          my.hideBackHome({ hide: false });
-        }
+        navigateWithParams({
+          page: "thankyou-page",
+          params: {
+            status: "processing",
+            orderId: orderTikiId,
+            paymentMethod: "Thanh toán với Tiki",
+            totalPayment: totalPayment,
+            message: "",
+            orderMonkeyId: orderMonkeyId,
+          },
+        });
         app.clearCart();
       },
       fail: (res) => {

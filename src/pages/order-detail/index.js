@@ -3,7 +3,7 @@ import { redirectTo } from "../../utils/navigate";
 
 Page({
   data: {
-    status: "Thành công",
+    status: "",
     orderId: "",
     paymentMethod: "Thanh toán với Tiki",
     totalMoney: 0,

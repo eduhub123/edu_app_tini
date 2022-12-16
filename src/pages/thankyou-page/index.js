@@ -1,9 +1,10 @@
 import queryString from "query-string";
 import { reLaunch } from "../../utils/navigate";
+import { getDetailOrder } from "../../services/index";
 
 Page({
   data: {
-    status: "success",
+    status: "processing",
     orderId: "",
     paymentMethod: "Thanh toán với Tiki",
     totalMoney: 0,
@@ -12,35 +13,23 @@ Page({
     message: "",
     time: 0,
     products: {},
+    orderMonkeyId: "",
   },
 
   onLoad(query) {
-    const {
-      status,
-      orderId,
-      paymentMethod,
-      totalPayment,
-      message,
-      totalMoney,
-      fee,
-      time,
-      products,
-    } = queryString.parse(query);
+    const { status, orderId, totalPayment, message, orderMonkeyId } =
+      queryString.parse(query);
 
-    if (status === "success") {
+    if (status !== "error") {
       my.hideBackHome({ hide: true });
     }
 
     this.setData({
       status,
       orderId,
-      paymentMethod,
       totalPayment,
       message,
-      totalMoney,
-      fee,
-      time,
-      products,
+      orderMonkeyId,
     });
   },
 
@@ -48,7 +37,7 @@ Page({
     reLaunch({
       page: "order-detail",
       params: {
-        status: "Thành công",
+        status: this.data.status === "success" ? "Thành công" : "Đang xử lý",
         orderId: this.data.orderId,
         paymentMethod: "Thanh toán với Tiki",
         totalMoney: this.data.totalMoney,
@@ -68,5 +57,41 @@ Page({
 
   goToBack() {
     my.navigateBack();
+  },
+
+  async onCheckOrder() {
+    try {
+      const resDetail = await getDetailOrder(this.data.orderMonkeyId);
+      if (resDetail.status === "success") {
+        if (resDetail.data.status === "online_paid") {
+          this.setData({
+            status: "success",
+            totalMoney: resDetail.data.total_money,
+            totalPayment: resDetail.data.total_payment,
+            fee: resDetail.data.fee,
+            time: resDetail.data.created_time,
+            products: JSON.stringify(resDetail.data.product),
+          });
+        }
+        if (resDetail.data.status === "canceled") {
+          this.setData({
+            status: "cancel",
+            totalMoney: resDetail.data.total_money,
+            totalPayment: resDetail.data.total_payment,
+          });
+        }
+      }
+    } catch {}
+  },
+
+  onReady() {
+    this.onCheckOrder();
+    const checkOrder = setInterval(() => {
+      if (this.data.status === "processing") {
+        this.onCheckOrder();
+      } else {
+        clearInterval(checkOrder);
+      }
+    }, 10000);
   },
 });
